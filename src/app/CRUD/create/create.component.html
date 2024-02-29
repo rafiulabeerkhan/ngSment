@@ -1,0 +1,84 @@
+<h2 style="color: green">Add Employees</h2>
+<br><br>
+<div class="container" style="background-color: #9a616d;">
+    <br>
+
+<form class="form-floating" [formGroup]="addEmployee" (ngSubmit)="onsubmit()">
+  <div class="form-group">
+    <mat-form-field class="example-full-width">
+      <mat-label>Employee ID:</mat-label>
+      <input matInput placeholder="Ex. ID"  formControlName="employeeId"/>
+    </mat-form-field>
+  </div>
+
+  <br />
+
+  <div class="form-group">
+    <mat-form-field class="example-full-width">
+      <mat-label>First Name:</mat-label>
+      <input matInput placeholder="first name" formControlName="firstName"/>
+    </mat-form-field>
+  </div>
+  <div class="form-group">
+    <mat-form-field class="example-full-width">
+      <mat-label>Last Name:</mat-label>
+      <input matInput placeholder="last name" formControlName="lastName"/>
+    </mat-form-field>
+  </div>
+  <div class="form-group">
+    <mat-form-field>
+      <mat-label>Age:</mat-label>
+      <input matInput formControlName="age" />
+    </mat-form-field>
+  </div>
+
+  <div class="form-group">
+    <mat-form-field>
+      <mat-label>Address:</mat-label>
+      <textarea matInput placeholder="Permanent Address" formControlName="address"></textarea>
+    </mat-form-field>
+  </div>
+  <div class="form-group">
+    <mat-form-field>
+      <mat-label>NID:</mat-label>
+      <input matInput placeholder="NID Number" formControlName="nid"/> 
+    </mat-form-field>
+  </div>
+  <div class="form-group">
+    <mat-form-field>
+        <mat-label>Birth Date</mat-label>
+        <input matInput placeholder="DD/MM/YYYY" formControlName="birthDate"/> 
+      </mat-form-field>
+  </div>
+  <div class="form-group">
+    <mat-form-field>
+        <mat-label>Shift</mat-label>
+        <input matInput placeholder="Morning/Night" formControlName="shift"/> 
+      </mat-form-field>
+  </div>
+  
+  <!-- <div class="form-group">
+    <mat-radio-group aria-label="Shift">
+      <mat-radio-button value="morning" formControlName="shift">Morning Shift</mat-radio-button>
+      <mat-radio-button value="night" formControlName="shift">Night Shift</mat-radio-button>
+    </mat-radio-group>
+  </div> -->
+  <br>
+  <div class="form-group">
+    <mat-form-field>
+        <mat-label>Working Hour:</mat-label>
+        <input matInput placeholder="Hours in Digit" formControlName="workingHour"/> 
+      </mat-form-field>
+  </div>
+<br>
+  <div class="form-group">
+    <mat-form-field>
+        <mat-label>Joining Date</mat-label>
+        <input matInput placeholder="DD/MM/YYYY" formControlName="joiningDate"/> 
+      </mat-form-field>
+  </div>
+
+  <button type="submit" class="btn btn-outline-light">Submit</button>
+</form>
+
+</div>

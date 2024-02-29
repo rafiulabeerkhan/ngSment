@@ -1,0 +1,49 @@
+
+<h3 style="color:black; border-radius:5rem;" class="text-center"><b>Lists</b></h3>
+<div class="container-sm bg-success">
+<table class="table table-hover">
+    <thead>
+        <tr class="table-hover">
+            <th scope="col">#</th>
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">Age</th>
+            <th scope="col">Address</th>
+            <th scope="col"><b>NID</b></th>
+            <th scope="col"> <b>Birth Date</b></th>
+            <th scope="col"> <b>Shift</b></th>
+            <th scope="col">Working Hour</th>
+            <th scope="col">Joining Date</th>
+            <th scope="col">Action</th>
+           
+          
+
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of empList">
+            <th scope="row">{{item.employeeID}}</th>
+            <td>{{item.firstName}}</td>
+            <td>{{item.lastName}}</td>
+            <td>{{item.age}}</td>
+            <td>{{item.address}}</td>
+            <td> <b>{{item.nid}}</b></td>
+            <td> <b>{{item.birthDate}}</b></td>
+            <td>{{item.shift}}</td>
+            <td>{{item.workingHour}}</td>
+            <td>{{item.joiningDate}}</td>
+            
+            
+            <td>
+                <button mat-stroked-button (click)="deleteEmployee(item.employeeID)"><mat-icon>delete</mat-icon>Delete</button>&nbsp;
+                <button mat-stroked-button [routerLink]="['/edit/', item.employeeID]"><mat-icon>edit</mat-icon>Edit</button>
+                &nbsp;
+                <!-- <button mat-stroked-button (click)="delete(item)"><mat-icon>delete</mat-icon>Delete</button>
+                <button mat-stroked-button (click)="edit(item)"><mat-icon>edit</mat-icon>Edit</button> -->
+            
+               
+            </td>
+        </tr>
+    </tbody>
+</table>

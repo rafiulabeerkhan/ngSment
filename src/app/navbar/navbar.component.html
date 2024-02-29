@@ -1,0 +1,124 @@
+<!-- <mat-sidenav-container>
+<mat-sidenav #sidenav mode="side" opened="true"></mat-sidenav>
+<mat-nav-list>
+
+
+
+
+    <mat-list-item> <a routerLink="/login" style="text-decoration:dotted; color: burlywood;"> <mat-icon>perm_identity</mat-icon>Login</a></mat-list-item>
+    <mat-list-item><a routerLink="/signup" style="text-decoration:dotted; color: burlywood;"><mat-icon>add_box</mat-icon>
+        Sign up</a></mat-list-item>
+    <mat-list-item><a routerLink="/edit" style="text-decoration:dotted; color: burlywood;">Navbar</a></mat-list-item>
+    <mat-list-item><a routerLink="/home" style="text-decoration:dotted; color: burlywood;">Home</a></mat-list-item>
+
+
+
+</mat-nav-list>
+
+
+<div>
+    <router-outlet></router-outlet>
+</div>
+</mat-sidenav-container> -->
+
+<mat-toolbar>
+    <mat-toolbar-row>
+      <button mat-flat-button routerLink="home">
+        <img
+          src="../../../assets/smLogo.png"
+          height="35px"
+          width="50px"
+          alt="smLogo"
+        />
+      </button>
+  
+      <button mat-button (click)="opened = !opened">
+        <mat-icon>menu</mat-icon> 
+      </button>
+  
+      <!-- <h4 style="color: #9a616d">
+        "The safety seal is a feature on medicine bottles that helps ensure the
+        integrity of the product"
+      </h4> -->
+       <!-- <button mat-button><mat-icon>menu</mat-icon> Home</button>  -->
+      <!-- &nbsp;&nbsp;&nbsp;&nbsp; -->
+      <p style="color: tomato; font-family: Verdana, Geneva, Tahoma, sans-serif;"> {{ currentDate | date: 'short'}}</p>
+    
+    </mat-toolbar-row>
+  
+    
+  </mat-toolbar>
+  
+  <mat-sidenav-container>
+    <mat-sidenav [(opened)]="opened" mode="side">
+      <mat-list>
+        <mat-list-item>
+          <a
+            routerLink="/dashboard"
+            style="text-decoration: dotted; color: #9a616d"
+          >
+            <mat-icon>dashboard</mat-icon>Dashboard</a
+          ></mat-list-item
+        >
+        <!-- <mat-list-item> <a routerLink="/home" style="text-decoration:dotted; color: #9A616D;"> <mat-icon>home</mat-icon>Home</a></mat-list-item> -->
+        <mat-list-item>
+          <a routerLink="/create" style="text-decoration: dotted; color: #9a616d"
+            ><mat-icon>create</mat-icon>Add Bottle</a
+          ></mat-list-item
+        >
+        <mat-list-item>
+          <a routerLink="/list" style="text-decoration: dotted; color: #9a616d"
+            ><mat-icon>list</mat-icon>List of Bottles</a
+          ></mat-list-item
+        >
+        <mat-list-item>
+          <a
+            routerLink="/employee"
+            style="text-decoration: dotted; color: #9a616d"
+            ><mat-icon>perm_identity</mat-icon>Recruit Employees</a
+          ></mat-list-item
+        >
+        <mat-list-item>
+          <a
+            routerLink="/employeelist"
+            style="text-decoration: dotted; color: #9a616d"
+            ><mat-icon>fingerprint</mat-icon>EmployeeLists</a
+          ></mat-list-item
+        >
+        <mat-list-item>
+          <a routerLink="/product" style="text-decoration: dotted; color: #9a616d"
+            ><mat-icon>shopping_cart</mat-icon>Products</a
+          ></mat-list-item
+        >
+  
+        <mat-list-item>
+          <a
+            routerLink="/production"
+            style="text-decoration: dotted; color: #9a616d"
+            ><mat-icon>info</mat-icon>Production</a>
+        </mat-list-item>
+        <mat-list-item>
+          <a
+            routerLink="/client"
+            style="text-decoration: dotted; color: #9a616d"
+            ><mat-icon>record_voice_over</mat-icon>Clients</a>
+        </mat-list-item>
+        <mat-list-item>
+          <a
+            routerLink="/material"
+            style="text-decoration: dotted; color: #9a616d"
+            ><mat-icon>build</mat-icon>Raw Materials</a>
+        </mat-list-item>
+        <mat-list-item>
+          <a
+            routerLink="/machine"
+            style="text-decoration: dotted; color: #9a616d"
+            ><mat-icon>confirmation_number</mat-icon>Machines</a>
+        </mat-list-item>
+      </mat-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+  

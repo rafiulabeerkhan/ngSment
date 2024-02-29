@@ -1,0 +1,41 @@
+mat-sidenav-container{
+    height: calc(250vh - 90vh);
+    }
+    mat-sidenav{
+      width: 170px;
+      background-color: #ffff;
+      color: #9A616D;
+    }
+    .header{
+    position: sticky;
+    
+    top: 0; 
+      
+    }
+    mat-toolbar{
+      display: initial;
+    }
+    
+    
+    // mat-sidenav-container{
+    //   height: 100%;
+    // }
+
+    mat-sidenav-container {
+        height: 160vh;
+      }
+      
+      mat-sidenav {
+        width: 170px;
+        background-color: white;
+        color: #9A616D;
+      }
+      
+      .header {
+        position: sticky;
+        top: 0;
+      }
+      
+      mat-toolbar {
+        display: initial;
+      }/*# sourceMappingURL=home.component.css.map */
