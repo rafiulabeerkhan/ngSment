@@ -10,51 +10,65 @@ import { EmployeeServiceService } from 'src/app/Service/employee-service.service
   styleUrls: ['./edit.component.scss'],
 })
 export class EditComponent implements OnInit {
-  public id!: number;
+EmployeeList: Employees[] = [];
+
+
+
+onSub() {
+console.log(this.EditEmployee.value);
+this.service.saveData(this.EditEmployee.value).subscribe((result) =>{
+  console.log("Data Saved");
+  
+})
+
+}
+
+
   constructor(
-    private employees: EmployeeServiceService,
-    private router: ActivatedRoute
-  ) {
-    this.id = this.router.snapshot.params['employeeId'];
+    private service: EmployeeServiceService,
+    private route: ActivatedRoute
+  ) {}
+
+  emp!: Employees;
+  getEmployeeById(id: number) {
+    this.service.getEmployeeById(id).subscribe({
+      next: (res) => {
+        this.emp = res;
+        this.EditEmployee.patchValue(this.emp);
+      },
+      error: (res) => {
+        console.log(res);
+      },
+    });
   }
-  EmployeeList: Employees[] = [];
 
-  message: boolean = false;
 
+  id!: number;
   ngOnInit(): void {
-    this.employees
-      .getEmployeeById(this.router.snapshot.params['employeeId'])
-      .subscribe((result: any) => {
-        this.editEmployee = new FormGroup({
-          firstName: new FormControl('firstName'),
-          lastName: new FormControl('lastName'),
-          age: new FormControl('age'),
-          address: new FormControl('address'),
-          nid: new FormControl('nid'),
-          birthDate: new FormControl('birthDate'),
-          shift: new FormControl('shift'),
-          workingHour: new FormControl('workingHour'),
-          joiningDate: new FormControl('joiningDate'),
-        });
-      });
-  }
-  removeMessage() {
-    this.message = false;
+
+
+this.route.params.subscribe((param)=>{
+  this.id = param["employeeID"];
+  console.log(this.id);
+   this.getEmployeeById(this.id);
+   
+  
+})
+
+
+
+
+  //  this.id = this.route.snapshot.params['employeeID'];
+  //  console.log(this.id);
+
+  //  this.getEmployeeById(this.id);
+   
   }
 
-  updateEmployee() {
-    this.employees
-      .updateEmployeeData(
-        this.router.snapshot.params['employeeId'],
-        this.editEmployee.value
-      )
-      .subscribe((result) => {
-        this.message = true;
-      });
-  }
 
-  editEmployee: FormGroup = new FormGroup({
-    employeeId: new FormControl(''),
+
+  EditEmployee: FormGroup = new FormGroup({
+    employeeID: new FormControl(''),
     firstName: new FormControl(''),
     lastName: new FormControl(''),
     age: new FormControl(''),
@@ -65,67 +79,4 @@ export class EditComponent implements OnInit {
     workingHour: new FormControl(''),
     joiningDate: new FormControl(''),
   });
-
-  onSub() {
-    if (!this.editData) {
-      console.log(this.editEmployee.value);
-      this.EmployeeList.push(this.editEmployee.value);
-    } else {
-      for (let i = 0; i < this.EmployeeList.length; i++) {
-        if (
-          this.EmployeeList[i].firstName === this.editEmployee.value.firstName
-        ) {
-          this.EmployeeList[i] = this.editEmployee.value;
-        }
-      }
-      this.editEmployee = new FormGroup({
-        firstName: new FormControl(''),
-        lastName: new FormControl(''),
-        age: new FormControl(''),
-        address: new FormControl(''),
-        nid: new FormControl(''),
-        birthDate: new FormControl(''),
-        shift: new FormControl(''),
-        workingHour: new FormControl(''),
-        joiningDate: new FormControl(''),
-      });
-    }
-    console.log(this.editEmployee.value);
-    this.clear();
-  }
-
-  editData: boolean = false;
-  clear() {
-    this.editEmployee = new FormGroup({
-      firstName: new FormControl(''),
-      lastName: new FormControl(''),
-      age: new FormControl(''),
-      address: new FormControl(''),
-      nid: new FormControl(''),
-      birthDate: new FormControl(''),
-      shift: new FormControl(''),
-      workingHour: new FormControl(''),
-      joiningDate: new FormControl(''),
-    });
-    this.editData = false;
-  }
-
-  delete(employee: Employees) {
-    console.log('Delete call' + employee);
-    this.EmployeeList = this.EmployeeList.filter((item) => item !== employee);
-  }
-  edit(employee: Employees) {
-    this.editData = true;
-    this.editEmployee = new FormGroup({
-      firstName: new FormControl(employee.firstName),
-      lastName: new FormControl(employee.lastName),
-      age: new FormControl(employee.age),
-      address: new FormControl(employee.address),
-      nid: new FormControl(employee.nid),
-      birthDate: new FormControl(employee.birthDate),
-      shift: new FormControl(employee.shift),
-      workingHour: new FormControl(employee.workingHour),
-      joiningDate: new FormControl(employee.joiningDate),
-    });
-  }
 }

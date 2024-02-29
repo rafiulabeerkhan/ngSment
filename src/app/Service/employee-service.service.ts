@@ -32,11 +32,11 @@ export class EmployeeServiceService {
     return this.http.delete(this.url+"/"+id);
   }
 
-  getEmployeeById (id: any) {
+  getEmployeeById (id: number) {
     return this.http.get(this.url+"/"+ id);
   }
 
-  updateEmployeeData(id: number, data:any) {
+  updateEmployeeData(id: number, data:number) {
     return this.http.put(`${this.url}/${id}`, data);
    }
 
