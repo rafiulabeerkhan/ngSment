@@ -21,6 +21,7 @@ import { RawMaterialComponent } from './Sment/raw-material/raw-material.componen
 import { ClientsComponent } from './Sment/clients/clients.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { ProductsListsComponent } from './ProductionCrud/products-lists/products-lists.component';
 
 
 @NgModule({
@@ -38,7 +39,8 @@ import { HttpClientModule } from '@angular/common/http';
     BottlesListComponent,
     MachinesComponent,
     RawMaterialComponent,
-    ClientsComponent
+    ClientsComponent,
+    ProductsListsComponent
 
   ],
   imports: [
