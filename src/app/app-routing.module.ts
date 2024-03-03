@@ -12,6 +12,7 @@ import { BottlesListComponent } from './Bottles/bottles-list/bottles-list.compon
 import { MachinesComponent } from './Sment/machines/machines.component';
 import { RawMaterialComponent } from './Sment/raw-material/raw-material.component';
 import { ClientsComponent } from './Sment/clients/clients.component';
+import { ClientListsComponent } from './Sment/client-lists/client-lists.component';
 
 
 const routes: Routes = [
@@ -27,6 +28,7 @@ const routes: Routes = [
    {path:"machine", component: MachinesComponent},
    {path:"material", component: RawMaterialComponent},
    {path:"client", component: ClientsComponent},
+   {path:"addClient", component: ClientListsComponent},
 ];
 
 @NgModule({

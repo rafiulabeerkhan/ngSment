@@ -1,0 +1,114 @@
+<mat-stepper orientation="vertical">
+    <mat-step>
+        <form>
+            <ng-template matStepLabel>Fill out your name</ng-template>
+            <mat-form-field>
+                <mat-label>Name</mat-label>
+                <input matInput placeholder="Full Name" required>
+            </mat-form-field>
+            <div>
+                <button mat-button matStepperPrevious>Back</button>
+                <button mat-button matStepperNext>Next</button>
+            </div>
+        </form>
+    </mat-step>
+    <mat-step>
+        <form>
+            <ng-template matStepLabel>Fill Your Designation</ng-template>
+            <mat-form-field>
+                <mat-label>Designation</mat-label>
+                <input matInput placeholder="Designation" required>
+            </mat-form-field>
+            <div>
+                <button mat-button matStepperPrevious>Back</button>
+                <button mat-button matStepperNext>Next</button>
+            </div>
+        </form>
+    </mat-step>
+    <mat-step>
+        <form>
+            <ng-template matStepLabel>How to reach</ng-template>
+            <mat-form-field>
+                <mat-label>PhoneNO.</mat-label>
+                <input matInput placeholder="Contact Number" required>
+            </mat-form-field>
+            <div>
+                <button mat-button matStepperPrevious>Back</button>
+                <button mat-button matStepperNext>Next</button>
+            </div>
+        </form>
+    </mat-step>
+    <mat-step>
+        <form>
+            <ng-template matStepLabel>Your Office Address</ng-template>
+            <mat-form-field>
+                <mat-label>Location</mat-label>
+                <input matInput placeholder="Office Address" required>
+            </mat-form-field>
+            <div>
+                <button mat-button matStepperPrevious>Back</button>
+                <button mat-button matStepperNext>Next</button>
+            </div>
+        </form>
+    </mat-step>
+    <mat-step>
+        <form>
+            <ng-template matStepLabel>Which products you need</ng-template>
+            <mat-form-field>
+                <mat-label>Details</mat-label>
+                <input matInput placeholder="Details of your requirements" required>
+            </mat-form-field>
+            <div>
+                <button mat-button matStepperPrevious>Back</button>
+                <button mat-button matStepperNext>Next</button>
+            </div>
+        </form>
+    </mat-step>
+    <mat-step>
+        <form>
+            <ng-template matStepLabel>Preferred Material</ng-template>
+            <mat-form-field>
+                <mat-label>Material ID</mat-label>
+                <input matInput placeholder="Material Id"required>
+            </mat-form-field>
+            <div>
+                <button mat-button matStepperPrevious>Back</button>
+                <button mat-button matStepperNext>Next</button>
+            </div>
+        </form>
+    </mat-step>
+    <mat-step>
+        <form>
+            <ng-template matStepLabel>Product Name</ng-template>
+            <mat-form-field>
+                <mat-label>Product ID</mat-label>
+                <input matInput placeholder="required ID" required>
+            </mat-form-field>
+            <div>
+                <button mat-button matStepperPrevious>Back</button>
+                <button mat-button matStepperNext>Next</button>
+            </div>
+        </form>
+    </mat-step>
+    <mat-step>
+        <form>
+            <ng-template matStepLabel>How many bags you want?</ng-template>
+            <mat-form-field>
+                <mat-label>50 Bags, 100 Bags</mat-label>
+                <input matInput placeholder="Quantity" required>
+            </mat-form-field>
+            <div>
+                <button mat-button matStepperPrevious>Back</button>
+                <button mat-button matStepperNext>Next</button>
+            </div>
+        </form>
+    </mat-step>
+    <mat-step>
+        <ng-template matStepLabel>Done</ng-template>
+        <p>You are now done.</p>
+        <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button>Submit</button>
+        </div>
+    </mat-step>
+</mat-stepper>

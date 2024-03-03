@@ -15,6 +15,8 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import {MatStepperModule} from '@angular/material/stepper';
+
 
 
 @NgModule({
@@ -34,7 +36,8 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     MatRadioModule,
         MatDatepickerModule,
     MatTableModule ,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatStepperModule
   ]
 })
 export class MaterialModule {}
