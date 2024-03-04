@@ -1,114 +1,69 @@
-<mat-stepper orientation="vertical">
-    <mat-step>
-        <form>
-            <ng-template matStepLabel>Fill out your name</ng-template>
-            <mat-form-field>
-                <mat-label>Name</mat-label>
-                <input matInput placeholder="Full Name" required>
-            </mat-form-field>
-            <div>
-                <button mat-button matStepperPrevious>Back</button>
-                <button mat-button matStepperNext>Next</button>
+<h2>Fill out the Form</h2>
+<div class="container-fluid">
+    <div class="text" style="color: #9f01ea;">
+        Welcome To SMENT
+    </div>
+    <br>
+    <form [formGroup]="addClient" (ngSubmit)="onsubmit()">
+        <div class="form-row">
+            <div class="input-data">
+                <input type="text" required formControlName="clientName">
+                <div class="underline"></div>
+                <label for="">Name</label>
             </div>
-        </form>
-    </mat-step>
-    <mat-step>
-        <form>
-            <ng-template matStepLabel>Fill Your Designation</ng-template>
-            <mat-form-field>
-                <mat-label>Designation</mat-label>
-                <input matInput placeholder="Designation" required>
-            </mat-form-field>
-            <div>
-                <button mat-button matStepperPrevious>Back</button>
-                <button mat-button matStepperNext>Next</button>
+            <br />
+            <div class="input-data">
+                <input type="text" required formControlName="designation">
+                <div class="underline"></div>
+                <label for="">Designation</label>
             </div>
-        </form>
-    </mat-step>
-    <mat-step>
-        <form>
-            <ng-template matStepLabel>How to reach</ng-template>
-            <mat-form-field>
-                <mat-label>PhoneNO.</mat-label>
-                <input matInput placeholder="Contact Number" required>
-            </mat-form-field>
-            <div>
-                <button mat-button matStepperPrevious>Back</button>
-                <button mat-button matStepperNext>Next</button>
-            </div>
-        </form>
-    </mat-step>
-    <mat-step>
-        <form>
-            <ng-template matStepLabel>Your Office Address</ng-template>
-            <mat-form-field>
-                <mat-label>Location</mat-label>
-                <input matInput placeholder="Office Address" required>
-            </mat-form-field>
-            <div>
-                <button mat-button matStepperPrevious>Back</button>
-                <button mat-button matStepperNext>Next</button>
-            </div>
-        </form>
-    </mat-step>
-    <mat-step>
-        <form>
-            <ng-template matStepLabel>Which products you need</ng-template>
-            <mat-form-field>
-                <mat-label>Details</mat-label>
-                <input matInput placeholder="Details of your requirements" required>
-            </mat-form-field>
-            <div>
-                <button mat-button matStepperPrevious>Back</button>
-                <button mat-button matStepperNext>Next</button>
-            </div>
-        </form>
-    </mat-step>
-    <mat-step>
-        <form>
-            <ng-template matStepLabel>Preferred Material</ng-template>
-            <mat-form-field>
-                <mat-label>Material ID</mat-label>
-                <input matInput placeholder="Material Id"required>
-            </mat-form-field>
-            <div>
-                <button mat-button matStepperPrevious>Back</button>
-                <button mat-button matStepperNext>Next</button>
-            </div>
-        </form>
-    </mat-step>
-    <mat-step>
-        <form>
-            <ng-template matStepLabel>Product Name</ng-template>
-            <mat-form-field>
-                <mat-label>Product ID</mat-label>
-                <input matInput placeholder="required ID" required>
-            </mat-form-field>
-            <div>
-                <button mat-button matStepperPrevious>Back</button>
-                <button mat-button matStepperNext>Next</button>
-            </div>
-        </form>
-    </mat-step>
-    <mat-step>
-        <form>
-            <ng-template matStepLabel>How many bags you want?</ng-template>
-            <mat-form-field>
-                <mat-label>50 Bags, 100 Bags</mat-label>
-                <input matInput placeholder="Quantity" required>
-            </mat-form-field>
-            <div>
-                <button mat-button matStepperPrevious>Back</button>
-                <button mat-button matStepperNext>Next</button>
-            </div>
-        </form>
-    </mat-step>
-    <mat-step>
-        <ng-template matStepLabel>Done</ng-template>
-        <p>You are now done.</p>
-        <div>
-            <button mat-button matStepperPrevious>Back</button>
-            <button mat-button>Submit</button>
+            <br />
         </div>
-    </mat-step>
-</mat-stepper>
+        <div class="form-row">
+            <div class="input-data">
+                <input type="text" required formControlName="contactNo">
+                <div class="underline"></div>
+                <label for="">Contact Number</label>
+            </div>
+            <br />
+            <div class="input-data">
+                <input type="text" required formControlName="officeAddress">
+                <div class="underline"></div>
+                <label for="">Location</label>
+            </div>
+            <br />
+            <div class="input-data">
+                <input type="text" required formControlName="orderInfo">
+                <div class="underline"></div>
+                <label for="">Order Information</label>
+            </div>
+            <br />
+            <div class="input-data">
+                <input type="number" required formControlName="material_id">
+                <div class="underline"></div>
+                <label for="">Material_id</label>
+            </div>
+            <br />
+            <div class="input-data">
+                <input type="number" required formControlName="product_id">
+                <div class="underline"></div>
+                <label for="">Product_id</label>
+            </div>
+            <br />
+            <div class="input-data">
+                <input type="number" required formControlName="quantity">
+                <div class="underline"></div>
+                <label for="">Quantity</label>
+            </div>
+            <br />
+        </div>
+        <br />
+
+        <div class="form-row submit-btn">
+            <div class="input-data">
+                <div class="inner"></div>
+                <input type="submit" value="submit">
+            </div>
+        </div>
+    </form>
+</div>

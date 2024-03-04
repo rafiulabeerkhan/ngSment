@@ -1,1 +1,38 @@
-<p>clients works!</p>
+<div class="content">
+    <div class="container" >
+        <h2 class="mb-5">Our Respectable Clients</h2>
+       
+        <div class="table-responsive" >
+            <button style="float: inline-end;" routerLink="/addClient">Add your Order</button>
+            <table class="table custom-table">
+                <thead>
+                    <tr>
+                        <th scope="col">Full Name</th>
+                        <th scope="col">Designation</th>
+                        <th scope="col">Contact Number</th>
+                        <th scope="col">Location</th>
+                        <th scope="col">Order Details</th>
+                        <th scope="col">Quantity</th>
+                        </tr>
+                </thead>
+                <tbody>
+                    <tr scope="row" *ngFor="let item of ClientList">
+                        <td> {{item.clientName}}</td>
+                        <td>{{item.designation}}</td>
+                        <td>{{item.contactNo}}</td>
+                        <td> <b>{{item.officeAddress}}</b></td>
+                        <td> <b>{{item.orderInfo}}</b></td>
+                        <td> <b>{{item.quantity}}</b></td>
+                        
+
+                        <!-- <td>
+                            <button mat-stroked-button (click)="deleteClient(item.clientId)"><mat-icon>delete</mat-icon>Delete</button>&nbsp;
+                            <button mat-stroked-button [routerLink]="['/edit', item.clientId]"><mat-icon>edit</mat-icon>Edit</button>
+                           
+                        </td> -->
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
