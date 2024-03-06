@@ -23,6 +23,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ProductsListsComponent } from './ProductionCrud/products-lists/products-lists.component';
 import { ClientListsComponent } from './Sment/client-lists/client-lists.component';
+import { RawMaterialListComponent } from './Sment/raw-material-list/raw-material-list.component';
+import { EditMaterialListComponent } from './Sment/edit-material-list/edit-material-list.component';
 
 
 @NgModule({
@@ -42,7 +44,9 @@ import { ClientListsComponent } from './Sment/client-lists/client-lists.componen
     RawMaterialComponent,
     ClientsComponent,
     ProductsListsComponent,
-    ClientListsComponent
+    ClientListsComponent,
+    RawMaterialListComponent,
+    EditMaterialListComponent
 
   ],
   imports: [

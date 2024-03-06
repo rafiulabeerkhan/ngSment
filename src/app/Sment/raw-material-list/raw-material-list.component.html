@@ -1,0 +1,49 @@
+<div class="content">
+    <div class="container" >
+        <h2 class="mb-5">Stocked Material List</h2>
+       
+        <div class="table-responsive" >
+            <!-- <button style="float: inline-end;" routerLink="/addClient">Add your Order</button> -->
+            <table class="table custom-table">
+                <thead>
+                    <tr>
+                        <th scope="col">Material ID</th>
+                        <th scope="col">Material Name</th>
+                        <th scope="col">Country</th>
+                        <th scope="col">Quantity</th>
+                        <th scope="col">Cost</th> <br>
+                        <!-- <th scope="col">Action</th> -->
+                        </tr>
+                </thead>
+                <tbody>
+                    <tr scope="row" *ngFor="let item of materialList" >
+                        <td> {{item.material_id}}</td>
+                        <td>{{item.name}}</td>
+                        <td>{{item.country}}</td>
+                        <td> <b>{{item.quantity}}</b></td>
+                        <td> <b>{{item.payment}}</b></td> <br>
+
+                        <td> <b><button class="button" role="button" (click)="deleteById(item.material_id)"><span class="text">
+                            <i class="fa-solid fa-delete-left"></i>
+                        </span><span>Delete Material</span></button></b></td>
+
+                        <td> <b><button class="button" role="button"  [routerLink]="['/update', item.material_id]"><span class="text">
+                            <i class="fa-regular fa-pen-to-square"></i>
+                        </span><span>Update Material</span></button></b></td>
+                        
+
+
+                      
+                        
+
+                        <!-- <td>
+                            <button mat-stroked-button (click)="deleteClient(item.clientId)"><mat-icon>delete</mat-icon>Delete</button>&nbsp;
+                            <button mat-stroked-button [routerLink]="['/edit', item.clientId]"><mat-icon>edit</mat-icon>Edit</button>
+                           
+                        </td> -->
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

@@ -13,6 +13,8 @@ import { MachinesComponent } from './Sment/machines/machines.component';
 import { RawMaterialComponent } from './Sment/raw-material/raw-material.component';
 import { ClientsComponent } from './Sment/clients/clients.component';
 import { ClientListsComponent } from './Sment/client-lists/client-lists.component';
+import { RawMaterialListComponent } from './Sment/raw-material-list/raw-material-list.component';
+import { EditMaterialListComponent } from './Sment/edit-material-list/edit-material-list.component';
 
 
 const routes: Routes = [
@@ -29,6 +31,8 @@ const routes: Routes = [
    {path:"material", component: RawMaterialComponent},
    {path:"client", component: ClientsComponent},
    {path:"addClient", component: ClientListsComponent},
+   {path:"materialList", component: RawMaterialListComponent},
+   {path:"update/:material_id", component: EditMaterialListComponent},
 ];
 
 @NgModule({

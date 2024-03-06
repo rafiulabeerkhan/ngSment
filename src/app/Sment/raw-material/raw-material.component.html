@@ -1,4 +1,4 @@
-<div class="container-md">
+<!-- <div class="container-md">
     <div class="row">
         <div class="col-3">
           <mat-grid-list cols="1" rowHeight="2:2">
@@ -106,4 +106,73 @@
           </p>
         </div>
     </div>
-    </div>
+    </div> -->
+<div class="container-fluid"> <br>
+  <div class="text" style="color: #9f01ea; font-size:x-large;">
+    Fill the fields to purchase the Raw Material
+  </div>
+  <br>
+  <form class="form-floating"  [formGroup]="addMaterial" (ngSubmit)="onsubmit()">
+    <div class="form-row">
+      <div class="input-data">
+        <span class="custom-dropdown big">
+          <b style="color: #3498db;">Material Name: </b>
+          <select formControlName="name">
+            <option>HDPE</option>
+            <option>LDPE</option>
+            <option>PET: Polyethylene Terephthalate</option>
+            <option>PP: Polypropylene</option>
+            <option>PC: Polycarbonate</option>
+            <option>PS: Polystyrene</option>
+            <option>PVC: Polyvinyl Chloride</option>
+          </select>
+        </span>
+      </div>
+      <br />
+      <div class="input-data">
+        <span class="custom-dropdown big">
+          <b style="color: #3498db;">Coutry</b>
+          <select formControlName="country">
+            <option>USA</option>
+            <option>Saudi Arabia</option>
+            <option>China</option>
+            <option>Japan</option>
+            <option>Sri-Lanka</option>
+            <option>India</option>
+          </select>
+        </span>
+      </div>
+      <br />
+    </div> <br>
+      <div class="input-data">
+        <span class="custom-dropdown big">
+          <b style="color: #3498db;">Quantity</b>
+          <select formControlName="quantity">
+            <option>50</option>
+            <option>100</option>
+            <option>150</option>
+            <option>200</option>
+            <option>250</option>
+            <option>500</option>
+            <option>1000</option>
+          </select>
+        </span>
+      </div>
+      <br />
+      <div class="form-row container-sm">
+        <div class="input-data">
+          <input type="number" required formControlName="payment">
+          <div class="underline"></div>
+          <label for="">Price</label>
+        </div>
+        <br />
+      </div>
+      <br />
+
+      <div class="form-row submit-btn">
+        <div class="input-data">
+          <button style="float: inline-end;">Purchase</button>
+        </div>
+      </div>
+  </form>
+</div>
