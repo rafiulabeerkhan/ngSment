@@ -1,0 +1,50 @@
+<div class="content">
+    <div class="container" >
+        <h2 class="mb-5">Employee's Salary</h2>
+       
+        <div class="table-responsive" >
+            <!-- <button style="float: inline-end;" routerLink="/addClient">Add your Order</button> -->
+            <table class="table custom-table">
+                <thead>
+                    <tr>
+                        <th scope="col">Employee ID</th>
+                        <th scope="col">Designation</th>
+                        <th scope="col">Payment Type</th>
+                        <th scope="col">Amount</th>
+                        <th scope="col">Over Time</th> 
+                        <th scope="col">Bonus</th> 
+                        <th scope="col">Total Amount</th> 
+                        <th scope="col">Action</th> 
+                        <th scope="col"></th> 
+                     
+                        <!-- <th scope="col">Action</th> -->
+                        </tr>
+                </thead>
+                <br>
+                <hr>
+                <tbody>
+                    <tr scope="row" *ngFor="let item of salaryList">
+                        <td> {{item.employee_id}}</td>
+                        <td>{{item.designation}}</td>
+                        <td>{{item.paymentType}}</td>
+                        <td>{{item.amount}}</td>
+                        <td> <b>{{item.overTime}}</b></td>
+                        <td> <b>{{item.bonus}}</b></td>
+                        <td> <b>{{item.totalAmount}}</b></td>
+                        
+                         <button class="button" role="button" (click)="deleteById(item.employee_id)">Delete</button><br>
+                         <button class="button" role="button" [routerLink]="['/updateSalary', item.employee_id]">Edit</button>
+                        <!-- <td> <b><button class="button" role="button" (click)="deleteById(item.employee_id)"><span class="text">
+                            <i class="fa-solid fa-delete-left"></i>
+                        </span><span>Delete Material</span></button></b></td> -->
+
+                        <!-- <td> <b><button class="button" role="button"  [routerLink]="['/update', item.material_id]"><span class="text">
+                            <i class="fa-regular fa-pen-to-square"></i>
+                        </span><span>Update Material</span></button></b></td> -->
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+

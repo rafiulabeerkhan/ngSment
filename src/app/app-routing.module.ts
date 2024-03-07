@@ -15,6 +15,18 @@ import { ClientsComponent } from './Sment/clients/clients.component';
 import { ClientListsComponent } from './Sment/client-lists/client-lists.component';
 import { RawMaterialListComponent } from './Sment/raw-material-list/raw-material-list.component';
 import { EditMaterialListComponent } from './Sment/edit-material-list/edit-material-list.component';
+import { SalaryComponent } from './Sment/salary/salary.component';
+import { SalaryListComponent } from './Sment/salary-list/salary-list.component';
+import { EditSalaryListComponent } from './Sment/edit-salary-list/edit-salary-list.component';
+import { OrderComponent } from './Order/order/order.component';
+import { OrderListComponent } from './Order/order-list/order-list.component';
+import { EditOrderComponent } from './Order/edit-order/edit-order.component';
+import { InvoiceComponent } from './Invoice/invoice/invoice.component';
+import { InvoiceListComponent } from './Invoice/invoice-list/invoice-list.component';
+import { EditInvoiceComponent } from './Invoice/edit-invoice/edit-invoice.component';
+import { OrderDetailsComponent } from './OrderDetails/order-details/order-details.component';
+import { OrderDetailsListComponent } from './OrderDetails/order-details-list/order-details-list.component';
+import { EditOrderDetailsComponent } from './OrderDetails/edit-order-details/edit-order-details.component';
 
 
 const routes: Routes = [
@@ -33,6 +45,18 @@ const routes: Routes = [
    {path:"addClient", component: ClientListsComponent},
    {path:"materialList", component: RawMaterialListComponent},
    {path:"update/:material_id", component: EditMaterialListComponent},
+   {path:"salary", component: SalaryComponent},
+   {path:"salaryList", component: SalaryListComponent},
+   {path:"updateSalary/:employee_id", component: EditSalaryListComponent},
+   {path:"order", component: OrderComponent},
+   {path:"orderList", component: OrderListComponent},
+   {path:"updateOrder/:order_id", component: EditOrderComponent},
+   {path:"invoice", component: InvoiceComponent},
+   {path:"invoiceList", component: InvoiceListComponent},
+   {path:"updateList/:id", component: EditInvoiceComponent},
+   {path:"details", component: OrderDetailsComponent},
+   {path:"detailsList", component: OrderDetailsListComponent},
+   {path:"orderList/:id", component: EditOrderDetailsComponent},
 ];
 
 @NgModule({

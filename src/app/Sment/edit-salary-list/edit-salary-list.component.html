@@ -1,0 +1,62 @@
+
+<div class="form-bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-offset-4 col-lg-4 col-sm-offset-3 col-sm-6">
+                <div class="form-container">
+                    <h3 class="title">Employee's Salary</h3>
+                    <form class="form-horizontal" [formGroup]="editSalary" (ngSubmit)="onSub()">
+                        <div class="form-group">
+                            <label for="designation">Designation</label>
+                            <select name="designation" id="designation" formControlName="designation"
+                                class="form-control">
+                                <option>Select</option>
+                                <option>Founder</option>
+                                <option>CEO</option>
+                                <option>Manager</option>
+                                <option>Production Manager</option>
+                                <option>Executive</option>
+                                <option>Cook </option>
+                                <option>Cleaner </option>
+                            </select>
+                        </div>
+                        <br>
+                        <div class="form-group ">
+                            <label for="paymentType">Payment Type</label>
+                            <select name=" paymentType" id="paymentType" formControlName="paymentType"
+                                class="form-control">
+                                <option>Select</option>
+                                <option>Monthly</option>
+                                <option>Daily</option>
+                                <option>Weekly</option>
+                                <option>Per Production</option>
+                            </select>
+                        </div>
+                        <!-- <div class="form-group">
+                            <label>Employee ID</label>
+                            <input type="number" class="form-control" placeholder="Employee Id"
+                                formControlName="employee_id">
+                        </div> -->
+                        <div class="form-group row">
+                            <label>Amount</label>
+                            <input type="number" class="form-control" placeholder="..." formControlName="amount">
+                        </div>
+                        <div class="form-group row ">
+                            <label>Overtime</label>
+                            <input type="number" class="form-control" placeholder="..." formControlName="overTime">
+                        </div>
+                        <div class="form-group row ">
+                            <label>Bonus</label>
+                            <input type="number" class="form-control" placeholder="..." formControlName="bonus">
+                        </div>
+                        <div class="form-group row ">
+                            <label>Final Amount</label>
+                            <input type="number" class="form-control" placeholder="..." formControlName="totalAmount">
+                        </div>
+                        <button class="btn" type="submit">Update</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

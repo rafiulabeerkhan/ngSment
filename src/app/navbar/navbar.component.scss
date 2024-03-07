@@ -1,12 +1,12 @@
 mat-sidenav-container{
     height: calc(250vh - 90vh);
-    
+  
     }
     mat-sidenav{
-      width: 250px;
+      width: 1000px;
       background-color:#9A616D;
       color: whitesmoke;
-      text-align:center;
+      text-align:left;
     }
     .header{
     position: sticky;
@@ -15,7 +15,7 @@ mat-sidenav-container{
       
     }
     mat-toolbar{
-      display: initial;
+      display: flex;
     }
     
     

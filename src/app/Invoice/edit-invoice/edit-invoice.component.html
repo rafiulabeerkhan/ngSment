@@ -1,0 +1,64 @@
+
+<div class="form-bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-offset-4 col-lg-4 col-sm-offset-3 col-sm-6">
+                <div class="form-container">
+                    <h3 class="title">Invoice</h3>
+                    <form class="form-horizontal" [formGroup]="editInvoice" (ngSubmit)="onSub()">
+                        <div class="form-group">
+                            <label for="designation">Status</label>
+                            <select name="designation" id="designation" formControlName="status"
+                                class="form-control" style="font-size:small;">
+                                <option>------</option>
+                                <option>On Board</option>
+                                <option>Pending</option>
+                                <option>On Going</option>
+                                <option>Delivered</option>
+                            </select>
+                        </div>
+                        <br>
+                        <div class="form-group row">
+                            <label>Name</label>
+                            <input type="text" class="form-control" placeholder="..." formControlName="receiverName">
+                        </div>
+                        <div class="form-group row ">
+                            <label>Address</label>
+                            <input type="text" class="form-control" placeholder="..." formControlName="receiverAddress">
+                        </div>
+                        <div class="form-group row ">
+                            <label>Item</label>
+                            <input type="text" class="form-control" placeholder="..." formControlName="receiverItem">
+                        </div>
+                        <div class="form-group row ">
+                            <label>Quantity</label>
+                            <input type="number" class="form-control" placeholder="..." formControlName="quantity">
+                        </div>
+                        <div class="form-group row ">
+                            <label>Price</label>
+                            <input type="number" class="form-control" placeholder="..." formControlName="price">
+                        </div>
+                        <div class="form-group row ">
+                            <label>Discount</label>
+                            <input type="number" class="form-control" placeholder="..." formControlName="discount">
+                        </div>
+                        <div class="form-group row ">
+                            <label>Grand Total</label>
+                            <input type="number" class="form-control" placeholder="..." formControlName="grandTotal">
+                        </div>
+                        <div class="form-group row ">
+                            <label>Date</label>
+                            <input type="date" class="form-control" placeholder="..." formControlName="dateTime">
+                        </div>
+                        <div class="form-group row ">
+                            <label>Production ID</label>
+                            <input type="number" class="form-control" placeholder="..." formControlName="production_id">
+                        </div>
+                        <button class="btn" type="submit">Check Out</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

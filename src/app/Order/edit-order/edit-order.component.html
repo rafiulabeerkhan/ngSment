@@ -1,0 +1,59 @@
+<h2>Update Order</h2>
+<div class="container-fluid">
+    <div class="text" style="color: #9f01ea;">
+        Welcome To SMENT
+    </div>
+    <br>
+    <form  [formGroup]="editOrder" (ngSubmit)="onSub()">
+        <div class="form-row">
+
+            <div class="input-data">
+                <input type="text" required formControlName="details_id">
+                <div class="underline"></div>
+                <label for="">Details ID</label>
+            </div>
+            <br />
+        </div>
+        <div class="form-row">
+            <div class="input-data">
+                <input type="number" required formControlName="totalQuantity">
+                <div class="underline"></div>
+                <label for="">Quantity in PCS</label>
+            </div>
+            <br />
+            <div class="input-data">
+                <input type="number" required formControlName="price">
+                <div class="underline"></div>
+                <label for="">Price in PCS</label>
+            </div>
+            <br />
+            <div class="input-data">
+                <input type="number" required formControlName="totalPrice">
+                <div class="underline"></div>
+                <label for="">Grand Total (Quantity*price)</label>
+            </div>
+            <br />
+            <div class="input-data">
+                <input type="number" required formControlName="due">
+                <div class="underline"></div>
+                <label for="">due</label>
+            </div>
+            <br />
+            <div class="input-data">
+                <input type="number" required formControlName="client_id">
+                <div class="underline"></div>
+                <label for="">Client ID</label>
+            </div>
+            <br />
+        </div>
+        <br />
+
+        <div class="form-row submit-btn">
+            <div class="input-data">
+                <div class="inner"></div>
+                <input type="submit" value="submit"> 
+            </div>
+        </div>
+    </form>
+</div>
+
