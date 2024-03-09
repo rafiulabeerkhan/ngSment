@@ -45,6 +45,14 @@ mat-sidenav-container{
         position: sticky;
         top: 0;
       }
+
+      .example-icon {
+       
+        float: right;
+      }
+      .example-spacer {
+        flex: 1 1 auto;
+      }
       
       // mat-toolbar-row {
       //   display: initial;

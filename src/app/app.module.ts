@@ -37,6 +37,8 @@ import { EditInvoiceComponent } from './Invoice/edit-invoice/edit-invoice.compon
 import { OrderDetailsComponent } from './OrderDetails/order-details/order-details.component';
 import { OrderDetailsListComponent } from './OrderDetails/order-details-list/order-details-list.component';
 import { EditOrderDetailsComponent } from './OrderDetails/edit-order-details/edit-order-details.component';
+import { LoginComponent } from './Authentication/login/login.component';
+import { SignUpComponent } from './Authentication/sign-up/sign-up.component';
 
 
 @NgModule({
@@ -70,7 +72,9 @@ import { EditOrderDetailsComponent } from './OrderDetails/edit-order-details/edi
     EditInvoiceComponent,
     OrderDetailsComponent,
     OrderDetailsListComponent,
-    EditOrderDetailsComponent
+    EditOrderDetailsComponent,
+    LoginComponent,
+    SignUpComponent
 
   ],
   imports: [
