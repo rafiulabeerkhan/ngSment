@@ -1,0 +1,39 @@
+<div class="content">
+    <div class="container" > <br>
+        <h2 class="mb-5">Ongoing Production</h2>
+       
+        <div class="table-responsive" >
+            <!-- <button style="float: inline-end;" routerLink="/addClient">Add your Order</button> -->
+            <table class="table custom-table">
+                <thead>
+                    <tr>
+                        <th scope="col">Production ID</th>
+                        <th scope="col">Product ID</th>
+                        <th scope="col">Material ID</th>
+                        <th scope="col">Employee ID</th>
+                        <th scope="col">Status</th>
+                        </tr>
+                </thead>
+                <br>
+              
+                <tbody>
+                    <tr scope="row"  *ngFor="let item of productionList" >
+                        <td> {{item.production_id}}</td>
+                        <td>{{item.product_id}}</td>
+                        <td>{{item.material_id}}</td>
+                        <td>{{item.employee_id}}</td>
+                        <td> <b>{{item.status}}</b></td> <br>
+                        <td>
+                            <button class="button" role="button" (click)="deleteById(item.production_id)">Delete</button>
+                        </td>
+                        <!-- <td>
+                            <button class="button" role="button"  [routerLink]="['/updateList', item.id]">Edit</button>
+                        </td> -->
+                        
+
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

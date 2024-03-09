@@ -7,7 +7,7 @@
                 <thead>
                     <tr>
                         <th scope="col">Order ID</th>
-                        <th scope="col">Details ID</th>
+                        <!-- <th scope="col">Details ID</th> -->
                         <th scope="col">Quantity(In Pieces)</th>
                         <th scope="col">Price(Per Pieces)</th>
                         <th scope="col">Amount</th>
@@ -18,18 +18,21 @@
                 <br>  
                 <tbody>
                     <tr  scope="row" *ngFor="let item of orderList">
-                        <td> {{item.order_id}}</td>
-                        <td>{{item.details_id}}</td>
+                        <td> {{item.id}}</td>
+                        <!-- <td>{{item.details_id}}</td> -->
                         <td>{{item.totalQuantity}}</td>
                         <td>{{item.price}}</td>
                         <td> <b>{{item.totalPrice}}</b></td>
                         <td> <b>{{item.due}}</b></td>
                         <td> <b>{{item.client_id}}</b></td> &nbsp;
                         <td> <b>
-                            <button class="button" role="button" (click)="deleteById(item.order_id)">Delete</button>
+                            <button class="button" role="button" (click)="deleteById(item.id)">Delete</button>
                         </b></td>
                         <td> <b>
-                            <button class="button" role="button"  [routerLink]="['/updateOrder', item.order_id]">Update</button>
+                            <button class="button" role="button"  [routerLink]="['/updateOrder', item.id]">Update</button>
+                        </b></td>
+                        <td> <b>
+                            <button class="button" style="background-color:#9A616D;" role="button"  routerLink="/production">Send for Production</button>
                         </b></td>
 
 <!--                         

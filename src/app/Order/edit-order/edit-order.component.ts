@@ -39,7 +39,6 @@ export class EditOrderComponent implements OnInit{
   }
     editOrder: FormGroup = new FormGroup({
       order_id: new FormControl(''),
-      details_id: new FormControl(''),
       totalQuantity: new FormControl(''),
       price: new FormControl(''),
       totalPrice: new FormControl(''),

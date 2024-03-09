@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Products } from '../Model/Products';
+import { Observable } from 'rxjs/internal/Observable';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +15,7 @@ export class AddProductsService {
       'Content-Type': 'application/json'
     })
   }
-  getAll(){
+  getAll(): Observable<any>{
     return this.http.get(this.ProductUrl+ "/getAll");
   }
   saveData (products: Products) {

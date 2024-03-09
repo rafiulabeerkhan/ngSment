@@ -7,6 +7,7 @@
             <table class="table custom-table">
                 <thead>
                     <tr>
+                        <th scope="col">Client ID</th>
                         <th scope="col">Full Name</th>
                         <th scope="col">Designation</th>
                         <th scope="col">Contact Number</th>
@@ -17,6 +18,7 @@
                 </thead>
                 <tbody>
                     <tr scope="row" *ngFor="let item of ClientList">
+                        <td> {{item.clientId}}</td>
                         <td> {{item.clientName}}</td>
                         <td>{{item.designation}}</td>
                         <td>{{item.contactNo}}</td>

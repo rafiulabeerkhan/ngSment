@@ -29,6 +29,8 @@ import { OrderDetailsListComponent } from './OrderDetails/order-details-list/ord
 import { EditOrderDetailsComponent } from './OrderDetails/edit-order-details/edit-order-details.component';
 import { LoginComponent } from './Authentication/login/login.component';
 import { SignUpComponent } from './Authentication/sign-up/sign-up.component';
+import { ProductsListsComponent } from './ProductionCrud/products-lists/products-lists.component';
+import { ProductionListComponent } from './ProductionCrud/production-list/production-list.component';
 
 
 const routes: Routes = [
@@ -61,6 +63,7 @@ const routes: Routes = [
    {path:"orderList/:id", component: EditOrderDetailsComponent},
    {path:"login", component: LoginComponent},
    {path:"signup", component: SignUpComponent},
+   {path:"productionList", component: ProductionListComponent},
 ];
 
 @NgModule({
