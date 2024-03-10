@@ -5,7 +5,8 @@ export class Products{
         public productName?: string,
         public material_id?: string,
         public material_name?: string,
-        public workOrder?: string
+        public workOrder?: string,
+        public weight?: number,
  
         ){}
    

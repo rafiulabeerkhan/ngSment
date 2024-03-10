@@ -31,18 +31,23 @@ import { LoginComponent } from './Authentication/login/login.component';
 import { SignUpComponent } from './Authentication/sign-up/sign-up.component';
 import { ProductsListsComponent } from './ProductionCrud/products-lists/products-lists.component';
 import { ProductionListComponent } from './ProductionCrud/production-list/production-list.component';
+import { EditProductionListComponent } from './ProductionCrud/edit-production-list/edit-production-list.component';
+import { MachineListComponent } from './Sment/machine-list/machine-list.component';
+import { EditMachineListComponent } from './Sment/edit-machine-list/edit-machine-list.component';
+import { EditBottleListComponent } from './Bottles/edit-bottle-list/edit-bottle-list.component';
 
 
 const routes: Routes = [
    {path:"home", component:HomeComponent},
    {path:"employee", component:CreateComponent},
-   {path:"employeelist", component: ListComponent},
+   {path:"list", component: ListComponent},
    {path:"edit/:employeeID", component: EditComponent},
    {path:"dashboard", component: DashboardComponent},
    {path:"product", component: ProductsComponent},
    {path:"production", component: ProductionComponent},
    {path:"create", component: AddBottlesComponent},
-   {path:"list", component: BottlesListComponent},
+   {path:"bottleList", component: BottlesListComponent},
+   {path:"updateBottle/:product_id", component: EditBottleListComponent},
    {path:"machine", component: MachinesComponent},
    {path:"material", component: RawMaterialComponent},
    {path:"client", component: ClientsComponent},
@@ -64,6 +69,9 @@ const routes: Routes = [
    {path:"login", component: LoginComponent},
    {path:"signup", component: SignUpComponent},
    {path:"productionList", component: ProductionListComponent},
+   {path:"productionList/:production_id", component: EditProductionListComponent},
+   {path:"machineList", component: MachineListComponent},
+   {path:"machineList/:machine_id", component: EditMachineListComponent},
 ];
 
 @NgModule({

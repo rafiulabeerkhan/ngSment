@@ -1,0 +1,40 @@
+<div class="content">
+    <div class="container" > <br>
+        <h2 class="mb-5">Machine List</h2>
+       
+        <div class="table-responsive" >
+            <!-- <button style="float: inline-end;" routerLink="/addClient">Add your Order</button> -->
+            <table class="table custom-table">
+                <thead>
+                    <tr>
+                        <th scope="col">Machine ID</th>
+                        <th scope="col">Country</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Production(Per Minute)</th>
+                        <th scope="col">Employee ID</th>
+                        </tr>
+                </thead>
+                <br>
+              
+                <tbody>
+                    <tr scope="row"  *ngFor="let item of machineList" >
+                        <td> {{item.machine_id}}</td>
+                        <td>{{item.country}}</td>
+                        <td>{{item.status}}</td>
+                        <td>{{item.pmProduction}}</td>
+                        <td> <b>{{item.employee_id}}</b></td> <br>
+                        <td>
+                            <button class="button" role="button" (click)="deleteById(item.machine_id)">Delete</button>
+                        </td>
+                        <td>
+                            <button class="button" role="button"  [routerLink]="['/machineList', item.machine_id]">Edit</button>
+                        </td>
+                        
+
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+

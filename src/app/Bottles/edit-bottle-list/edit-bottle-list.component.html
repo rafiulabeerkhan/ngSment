@@ -1,0 +1,180 @@
+<!-- <div class="container" role="alert" style="background-color: #97605b">
+  <br />
+  <form style="text-align: center">
+    <div class="form-group">
+      <mat-form-field class="example-full-width">
+        <mat-label>Product ID</mat-label>
+        <input matInput placeholder="Ex. #sm0911" />
+      </mat-form-field>
+    </div>
+
+    <div class="form-group">
+      <mat-form-field>
+        <mat-label>Select Product Name</mat-label>
+        <mat-select>
+          <mat-option value="HDPE Bottles">HDPE Bottles</mat-option><br />
+          <mat-option value="HDPE Container Set">HDPE Container Set</mat-option><br />
+          <mat-option value="Pharmaceuticals Measuring Cup">Pharmaceuticals Measuring Cup</mat-option><br />
+          <mat-option value="Pharmaceuticals Measuring Spoon">Pharmaceuticals Measuring Spoon</mat-option><br />
+          <mat-option value="Pharmaceuticals Dropper">Pharmaceuticals Dropper</mat-option><br />
+          <mat-option value="Elastic Belt for Sanitary Napkin">Elastic Belt for Sanitary Napkin</mat-option><br />
+          <mat-option value="Container Set">Container Set</mat-option><br />
+          <mat-option value="Vatenary Syringe">Vatenary Syringe</mat-option><br />
+          <mat-option value="5 Litre bottles">5 Litre bottles</mat-option><br />
+          <mat-option value="Syringes">Syringes</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="form-group">
+      <mat-form-field class="example-full-width">
+        <mat-label>Material ID</mat-label>
+        <input matInput placeholder="Ex. #mid0911" />
+      </mat-form-field>
+    </div>
+    <div class="form-group">
+      <mat-form-field>
+        <mat-label>Raw Material</mat-label>
+
+
+        <mat-select>
+          <mat-option value="HDPE">HDPE</mat-option>
+          <mat-option value="LDPE">LDPE</mat-option>
+          <mat-option value="PET">PET: Polyethylene Terephthalate</mat-option>
+          <mat-option value="PP">PP: Polypropylene</mat-option>
+          <mat-option value="PC">PC: Polycarbonate</mat-option>
+          <mat-option value="PS">PS: Polystyrene</mat-option>
+          <mat-option value="PVC">PVC: Polyvinyl Chloride</mat-option>
+
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="form-group">
+      <mat-form-field class="example-full-width">
+        <mat-label>WorkOrder</mat-label>
+        <input matInput placeholder="Ex. #sm09mid09-????" />
+      </mat-form-field>
+    </div>
+    
+    <button type="submit" class="btn btn-outline-success">Submit</button>
+  </form>
+  <br />
+
+</div>
+
+ -->
+ <div class="container-fluid">
+    <!-- <div class="text" style="color: #9f01ea;">
+      Welcome To SMENT
+    </div> -->
+    <br>
+    <form [formGroup]="editProducts">
+      <div class="form-row">
+        <div class="input-data">
+          <span class="custom-dropdown big">
+            <b style="color: #3498db;">Product Name: </b>
+            <select formControlName="productName">
+              <option>HDPE Bottles</option>
+              <option>HDPE Container Set</option>
+              <option>Pharmaceuticals Measuring Cup</option>
+              <option>Pharmaceuticals Measuring Spoon</option>
+              <option>Pharmaceuticals Dropper</option>
+              <option>Elastic Belt for Sanitary Napkin</option>
+              <option>Container Set</option>
+              <option>Vatenary Syringe</option>
+              <option>5 Litre bottles</option>
+              <option>Syringes</option>
+            </select>
+          </span>
+        </div>
+        <br />
+        <br>
+        <div class="input-data">
+          <input type="text" placeholder="#MID0911" required formControlName="material_id">
+          <div class="underline"></div>
+          <label for="">Material ID</label>
+        </div>
+        <br />
+      </div>
+      <div class="form-row">
+        <div class="input-data">
+          <span class="custom-dropdown big">
+            <b style="color: #3498db;">Material Name: </b>
+            <select formControlName="material_name">
+              <option>HDPE</option>
+              <option>LDPE</option>
+              <option>PET: Polyethylene Terephthalate</option>
+              <option>PP: Polypropylene</option>
+              <option>PC: Polycarbonate</option>
+              <option>PS: Polystyrene</option>
+              <option>PVC: Polyvinyl Chloride</option>
+            </select>
+          </span>
+        </div>
+        <br />
+        <div class="input-data">
+          <input type="text" placeholder="Ex. #sm09mid09-????" required formControlName="workOrder">
+          <div class="underline"></div>
+          <label for="">Work Order</label>
+        </div>
+        <br />
+        <div class="input-data">
+          <input type="number" required placeholder="weight in grams" formControlName="weight">
+          <div class="underline"></div>
+          <label for="">Weight</label>
+        </div> <br> <br>
+        <div class="input-data">
+          <br>
+          <!-- <input type="file" class="btn " multiple (change)="selectFiles($event)" />
+          <br><br>
+          <div class="col-4">
+            <button [disabled]="!selectedFiles" (click)="uploadFiles()">
+              Upload
+            </button>
+          </div>
+  
+          <div *ngFor="let progressInfo of progressInfos" class="mb-2">
+            <span>{{ progressInfo.fileName }}</span>
+            <div class="progress">
+              <div class="progress-bar progress-bar-info" role="progressbar" attr.aria-valuenow="{{ progressInfo.value }}"
+                aria-valuemin="0" aria-valuemax="100" [ngStyle]="{ width: progressInfo.value + '%' }">
+                {{ progressInfo.value }}%
+              </div>
+            </div>
+          </div>
+  
+          <div *ngIf="message.length" class="alert alert-secondary my-3" role="alert">
+            <ul *ngFor="let msg of message; let i = index">
+              <li>{{ msg }}</li>
+            </ul>
+          </div> -->
+          <!-- <div class="card mt-3">
+            <div class="card-header">List of Files</div>
+            <ul class="list-group list-group-flush">
+              <li *ngFor="let file of fileInfos | async" class="list-group-item">
+                <b>{{ file.name }}</b><br>
+                <a href="{{ file.url }}">{{ file.url }}</a><br>
+                <img [src]="'data:image/jpeg;base64,'+file.image" width="300px" height="200px"/>
+          
+              </li>
+            </ul>
+          </div> -->
+  
+        </div>
+  
+      </div>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      &nbsp;
+      &nbsp;
+  
+      <div class="form-row submit-btn">
+        <div class="input-data">
+          <div class="inner"></div>
+          <input type="submit" value="submit">
+        </div>
+      </div>
+    </form>
+  </div>

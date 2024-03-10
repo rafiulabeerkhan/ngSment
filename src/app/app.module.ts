@@ -40,6 +40,10 @@ import { EditOrderDetailsComponent } from './OrderDetails/edit-order-details/edi
 import { LoginComponent } from './Authentication/login/login.component';
 import { SignUpComponent } from './Authentication/sign-up/sign-up.component';
 import { ProductionListComponent } from './ProductionCrud/production-list/production-list.component';
+import { EditProductionListComponent } from './ProductionCrud/edit-production-list/edit-production-list.component';
+import { MachineListComponent } from './Sment/machine-list/machine-list.component';
+import { EditMachineListComponent } from './Sment/edit-machine-list/edit-machine-list.component';
+import { EditBottleListComponent } from './Bottles/edit-bottle-list/edit-bottle-list.component';
 
 
 @NgModule({
@@ -76,7 +80,11 @@ import { ProductionListComponent } from './ProductionCrud/production-list/produc
     EditOrderDetailsComponent,
     LoginComponent,
     SignUpComponent,
-    ProductionListComponent
+    ProductionListComponent,
+    EditProductionListComponent,
+    MachineListComponent,
+    EditMachineListComponent,
+    EditBottleListComponent
 
   ],
   imports: [

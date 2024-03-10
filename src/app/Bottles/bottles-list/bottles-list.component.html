@@ -1,1 +1,43 @@
-<p>bottles-list works!</p>
+<div class="content">
+    <div class="container" > <br>
+        <h2 class="mb-5">List of Product</h2>
+       
+        <div class="table-responsive" >
+            <!-- <button style="float: inline-end;" routerLink="/addClient">Add your Order</button> -->
+            <table class="table custom-table">
+                <thead>
+                    <tr>
+                
+                        <th scope="col">Product ID</th>
+                        <th scope="col">Product Name</th>
+                        <th scope="col">Material ID</th>
+                        <th scope="col">Material Name</th>
+                        <th scope="col">Work Order</th>
+                        <th scope="col">Weight</th>
+                        </tr>
+                </thead>
+                <br>
+              
+                <tbody>
+                    <tr scope="row"  *ngFor="let item of productList" >
+                        <td> {{item.product_id}}</td>
+                        <td>{{item.productName}}</td>
+                        <td>{{item.material_id}}</td>
+                        <td>{{item.material_name}}</td>
+                        <td> <b>{{item.workOrder}}</b></td>
+                        <td> <b>{{item.weight}}</b></td> <br>
+                        <td>
+                            <button class="button" role="button" (click)="deleteById(item.product_id)">Delete</button>
+                        </td>
+                        <td>
+                            <button class="button" role="button"  [routerLink]="['/updateBottle', item.product_id]">Edit</button>
+                        </td>
+                        
+
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
