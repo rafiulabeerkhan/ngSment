@@ -3,8 +3,8 @@ mat-sidenav-container{
   
     }
     mat-sidenav{
-      width: 250px;
-      background-color:#9A616D;
+      width: 180px;
+      // background-color:#9A616D;
       color: whitesmoke;
       text-align:center;
     }
@@ -35,20 +35,22 @@ mat-sidenav-container{
         height: 250vh;
       }
       
-      mat-sidenav {
-        width: 250px;
-        background-color: #9A616D;
-        color: whitesmoke;
+      // mat-sidenav {
+      //   width: 150px;
+      //   background-color: wheat;
+      //   color: whitesmoke;
 
         
-      }
-      a{
-        color: whitesmoke;
-        font-family: 'Lato', sans-serif;
-        font-size: 25px;
+      // }
+      // a{
+      //   color: whitesmoke;
+      //   font-family: 'Lato', sans-serif;
+      //   font-size: 25px;
        
-      }
-
+      // }
+.mat-button{
+  color: whitesmoke;
+}
 
       
 

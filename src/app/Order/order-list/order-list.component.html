@@ -1,8 +1,11 @@
 <div class="content">
-    <div class="container" >
+    <div class="container">
         <h2 class="mb-5">Pending List Of Orders</h2>
-       
-        <div class="table-responsive" >
+        <div style="float: inline-end;">
+            <button class="button" routerLink="/order">Click to Order</button>
+        </div>
+
+        <div class="table-responsive">
             <table class="table custom-table">
                 <thead>
                     <tr>
@@ -12,30 +15,35 @@
                         <th scope="col">Price(Per Pieces)</th>
                         <th scope="col">Amount</th>
                         <th scope="col">Due Amount</th>
-                        <th scope="col">Client ID:</th>  
-                   </tr>
+                        <th scope="col">Client ID:</th>
+                        <th scope="col">Actions:</th>
+
+                    </tr>
                 </thead>
-                <br>  
+
                 <tbody>
-                    <tr  scope="row" *ngFor="let item of orderList">
+                    <tr scope="row" *ngFor="let item of orderList">
                         <td> {{item.id}}</td>
                         <!-- <td>{{item.details_id}}</td> -->
                         <td>{{item.totalQuantity}}</td>
                         <td>{{item.price}}</td>
                         <td> <b>{{item.totalPrice}}</b></td>
                         <td> <b>{{item.due}}</b></td>
-                        <td> <b>{{item.client_id}}</b></td> &nbsp;
-                        <td> <b>
-                            <button class="button" role="button" (click)="deleteById(item.id)">Delete</button>
-                        </b></td>
-                        <td> <b>
-                            <button class="button" role="button"  [routerLink]="['/updateOrder', item.id]">Update</button>
-                        </b></td>
-                        <td> <b>
-                            <button class="button" style="background-color:#9A616D;" role="button"  routerLink="/production">Send for Production</button>
-                        </b></td>
+                        <td> <b>{{item.client_id}}</b></td> 
+                        <td> 
+                                <a class="btn btn-info" (click)="deleteById(item.id)">Delete</a>
+                        
+                                <a class="btn btn-info"  [routerLink]="['/updateOrder', item.id]">Update</a>
+                           
 
-<!--                         
+                            <button style="background-color:beige; color: black;" role="button"
+                                    routerLink="/production">Send for Production</button>
+                            
+                        </td>
+
+
+
+                        <!--                         
                          <button class="button" role="button" (click)="deleteById(item.employee_id)">Delete</button><br>
                          <button class="button" role="button" [routerLink]="['/updateSalary', item.employee_id]">Edit</button> -->
                         <!-- <td> <b><button class="button" role="button" (click)="deleteById(item.employee_id)"><span class="text">

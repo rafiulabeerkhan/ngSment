@@ -65,7 +65,7 @@ const routes: Routes = [
    {path:"updateList/:id", component: EditInvoiceComponent},
    {path:"details", component: OrderDetailsComponent},
    {path:"detailsList", component: OrderDetailsListComponent},
-   {path:"orderList/:id", component: EditOrderDetailsComponent},
+   {path:"orderDetailsList/:id", component: EditOrderDetailsComponent},
    {path:"login", component: LoginComponent},
    {path:"signup", component: SignUpComponent},
    {path:"productionList", component: ProductionListComponent},

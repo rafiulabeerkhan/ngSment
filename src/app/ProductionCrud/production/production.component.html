@@ -10,9 +10,11 @@
 
             <div class="row">
                 <div class="col">
-                    <label for="">Product ID</label>
-                    <div class="underline"></div>
-                    <input type="number" required class="form-control"   formControlName="product_id">
+                  <label for="">Material ID</label>
+                    <select class="form-select" aria-label="Default select example"  formControlName="orderEntity">
+                        <option selected>Select Order ID</option>
+                        <option *ngFor="let a of OrderList" value="{{a.id}}">{{a.totalQuantity}}</option>
+                      </select>
                 </div>
                 <br />
                 <div class="col">
@@ -28,6 +30,13 @@
                     <label for="">Employee ID</label>
                     <div class="underline"></div>
                     <input type="number" required class="form-control"   formControlName="employee_id">
+
+                </div>
+                <br />
+                <div class="col">
+                    <label for="">Machine ID</label>
+                    <div class="underline"></div>
+                    <input type="number" required class="form-control"   formControlName="machine_id">
 
                 </div>
                 <br />

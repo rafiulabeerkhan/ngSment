@@ -1,6 +1,11 @@
 <div class="content">
-    <div class="container" > <br>
+    <div class="container-fluid" > <br>
         <h2 class="mb-5">Machine List</h2>
+        <div style="float: inline-end;">
+            <button class="button" routerLink="/machine">
+                <i class="fa-solid fa-square-plus"> &nbsp; Machine</i>
+            </button>
+        </div>
        
         <div class="table-responsive" >
             <!-- <button style="float: inline-end;" routerLink="/addClient">Add your Order</button> -->
@@ -24,10 +29,10 @@
                         <td>{{item.pmProduction}}</td>
                         <td> <b>{{item.employee_id}}</b></td> <br>
                         <td>
-                            <button class="button" role="button" (click)="deleteById(item.machine_id)">Delete</button>
+                            <button  role="button" (click)="deleteById(item.machine_id)">Delete</button>
                         </td>
                         <td>
-                            <button class="button" role="button"  [routerLink]="['/machineList', item.machine_id]">Edit</button>
+                            <button role="button"  [routerLink]="['/machineList', item.machine_id]">Edit</button>
                         </td>
                         
 

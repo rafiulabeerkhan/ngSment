@@ -3,7 +3,7 @@
         <h2 class="mb-5">Ongoing Production</h2>
        
         <div class="table-responsive" >
-            <!-- <button style="float: inline-end;" routerLink="/addClient">Add your Order</button> -->
+            <button style="float: inline-end;" routerLink="/production" class="button">Produce</button>
             <table class="table custom-table">
                 <thead>
                     <tr>
@@ -19,15 +19,15 @@
                 <tbody>
                     <tr scope="row"  *ngFor="let item of productionList" >
                         <td> {{item.production_id}}</td>
-                        <td>{{item.product_id}}</td>
                         <td>{{item.material_id}}</td>
                         <td>{{item.employee_id}}</td>
+                        <td>{{item.machine_id}}</td>
                         <td> <b>{{item.status}}</b></td> <br>
                         <td>
-                            <button class="button" role="button" (click)="deleteById(item.production_id)">Delete</button>
+                            <button  role="button" (click)="deleteById(item.production_id)">Delete</button>
                         </td>
                         <td>
-                            <button class="button" role="button"  [routerLink]="['/productionList', item.production_id]">Edit</button>
+                            <button  role="button"  [routerLink]="['/productionList', item.production_id]">Edit</button>
                         </td>
                         
 

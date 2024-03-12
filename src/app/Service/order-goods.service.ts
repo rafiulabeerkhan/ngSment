@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Order } from '../Model/Order';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -16,8 +17,8 @@ export class OrderGoodsService {
       'Content-Type': 'application/json'
     })
   }
-  getAll(){
-    return this.http.get(this.url+ "/getAll");
+  getAll():Observable<Order[]>{
+    return this.http.get<Order[]>(this.url+ "/getAll");
   }
   saveOrder (order: Order) {
     console.log(order);

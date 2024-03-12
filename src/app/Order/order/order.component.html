@@ -1,10 +1,7 @@
-<h2>Your Order</h2>
-<div class="container-fluid">
-    <div class="text" style="color: #9f01ea;">
-        Welcome To SMENT
-    </div>
-    <div class="container">
 
+<div class="container-fluid">
+    <div class="container">
+      <h2>Your Order</h2>
         <br>
         <form [formGroup]="addOrder" (ngSubmit)="onsubmit()">
 
@@ -50,7 +47,7 @@
                   <label for="">Client ID</label>
                     <select class="form-select" aria-label="Default select example"  formControlName="clientEntity">
                         <option selected>Select Client ID</option>
-                        <option *ngFor="let a of clientList" value="{{a.client_id}}">{{a.clientName}}</option>
+                        <option *ngFor="let a of clientList" value="{{a.clientId}}">{{a.clientName}}</option>
                       </select>
                 </div>
                 <div class="col">

@@ -1,6 +1,9 @@
 <div class="content">
     <div class="container" > <br>
         <h2 class="mb-5">Invoice Lists</h2>
+        <div style="float: inline-end">
+            <button class="button" routerLink="/invoice">Add Invoice</button>
+        </div>
        
         <div class="table-responsive" >
             <!-- <button style="float: inline-end;" routerLink="/addClient">Add your Order</button> -->
@@ -37,10 +40,10 @@
                         <td> <b>{{item.dateTime|date:'shortDate'}}</b></td>
                         <td> <b>{{item.production_id}}</b></td>
                         <td>
-                            <button class="button" role="button" (click)="deleteById(item.id)">Delete</button>
+                            <button role="button" (click)="deleteById(item.id)">Delete</button>
                         </td>
                         <td>
-                            <button class="button" role="button"  [routerLink]="['/updateList', item.id]">Edit</button>
+                            <button role="button" [routerLink]="['/updateList', item.id]">Edit</button>
                         </td>
                         
 

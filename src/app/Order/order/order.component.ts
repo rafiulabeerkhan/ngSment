@@ -44,13 +44,14 @@ export class OrderComponent implements OnInit{
   }
 
   onsubmit() {
+    console.log('before ---------------------',this.addOrder.value);
+
     this.addOrder.value.productEntity = {'product_id': this.addOrder.value.productEntity}
-    console.log(this.addOrder.value);
+    this.addOrder.value.clientEntity = {'clientId': this.addOrder.value.clientEntity};
 
     this.order.saveOrder(this.addOrder.value).subscribe((result) => {
       console.log("Data Saved!");
 
-      this.addOrder.value.clientEntity = {'client_id': this.addOrder.value.clientEntity};
 
   
 

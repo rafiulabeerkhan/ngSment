@@ -1,6 +1,14 @@
 <div class="content">
     <div class="container" >
         <h2 class="mb-5">Employee's Salary</h2>
+        <!-- <div style="float: inline-end;">
+            <button>
+                <i class="fa-solid fa-user-plus"> More</i>
+            </button>
+        </div> -->
+        <button style="float: inline-end;" routerLink="/salary">
+            <i class="fa-solid fa-user-plus" ></i>
+        </button>
        
         <div class="table-responsive" >
             <!-- <button style="float: inline-end;" routerLink="/addClient">Add your Order</button> -->
@@ -21,7 +29,6 @@
                         </tr>
                 </thead>
                 <br>
-                <hr>
                 <tbody>
                     <tr scope="row" *ngFor="let item of salaryList">
                         <td> {{item.employee_id}}</td>
