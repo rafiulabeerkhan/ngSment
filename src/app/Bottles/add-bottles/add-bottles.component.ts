@@ -1,6 +1,7 @@
 import { HttpEventType, HttpResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Products } from 'src/app/Model/Products';
 import { AddProductsService } from 'src/app/Service/add-products.service';
@@ -19,7 +20,9 @@ export class AddBottlesComponent implements OnInit {
 
   fileInfos?: Observable<any>;
 
-  constructor(private uploadService: FileUploadforbottleService, private product: AddProductsService) { }
+  constructor(private uploadService: FileUploadforbottleService, 
+    private product: AddProductsService,
+    private route: Router) { }
 
 
   ngOnInit(): void {
@@ -74,7 +77,7 @@ export class AddBottlesComponent implements OnInit {
     console.log(this.addProducts.value);
     this.product.saveData(this.addProducts.value).subscribe((result) => {
       console.log("Data Saved!");
-
+this.route.navigate(["/bottleList"])
     });
   }
 

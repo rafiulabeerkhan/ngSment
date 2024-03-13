@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Material } from 'src/app/Model/Material';
 import { RawMaterialService } from 'src/app/Service/raw-material.service';
 
@@ -10,7 +11,7 @@ import { RawMaterialService } from 'src/app/Service/raw-material.service';
 })
 export class RawMaterialComponent implements OnInit{
 
-  constructor(private material: RawMaterialService){}
+  constructor(private material: RawMaterialService, private router: Router){}
   MaterialList: Material[]=[];
   message: boolean=false;
 
@@ -35,7 +36,7 @@ export class RawMaterialComponent implements OnInit{
     console.log(this.addMaterial.value);
     this.material.saveMaterial(this.addMaterial.value).subscribe((result)=>{
       console.log("Data Saved!");
-      
+      this.router.navigate(["/materialList"])
     });
     
   }

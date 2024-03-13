@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Salary } from 'src/app/Model/Salary';
 import { SalaryService } from 'src/app/Service/salary.service';
 
@@ -10,7 +11,7 @@ import { SalaryService } from 'src/app/Service/salary.service';
 })
 export class SalaryComponent implements OnInit{
 
-  constructor(private salary: SalaryService){}
+  constructor(private salary: SalaryService, private router: Router){}
   SalaryList: Salary[]=[];
   message: boolean=false;
   ngOnInit(): void {
@@ -35,6 +36,7 @@ export class SalaryComponent implements OnInit{
     console.log(this.addSalary.value);
     this.salary.saveSalary(this.addSalary.value).subscribe((result)=>{
       console.log("Data Saved!");
+      this.router.navigate(["/salaryList"])
     });
     
   }

@@ -13,7 +13,6 @@ import { ListComponent } from './CRUD/list/list.component';
 import { EditComponent } from './CRUD/edit/edit.component';
 import { DashboardComponent } from './CRUD/dashboard/dashboard.component';
 import { ProductionComponent } from './ProductionCrud/production/production.component';
-import { ProductsComponent } from './ProductionCrud/products/products.component';
 import { AddBottlesComponent } from './Bottles/add-bottles/add-bottles.component';
 import { BottlesListComponent } from './Bottles/bottles-list/bottles-list.component';
 import { MachinesComponent } from './Sment/machines/machines.component';
@@ -21,7 +20,6 @@ import { RawMaterialComponent } from './Sment/raw-material/raw-material.componen
 import { ClientsComponent } from './Sment/clients/clients.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { ProductsListsComponent } from './ProductionCrud/products-lists/products-lists.component';
 import { ClientListsComponent } from './Sment/client-lists/client-lists.component';
 import { RawMaterialListComponent } from './Sment/raw-material-list/raw-material-list.component';
 import { EditMaterialListComponent } from './Sment/edit-material-list/edit-material-list.component';
@@ -56,13 +54,12 @@ import { EditBottleListComponent } from './Bottles/edit-bottle-list/edit-bottle-
     EditComponent,
     DashboardComponent,
     ProductionComponent,
-    ProductsComponent,
     AddBottlesComponent,
     BottlesListComponent,
     MachinesComponent,
     RawMaterialComponent,
     ClientsComponent,
-    ProductsListsComponent,
+    ProductionListComponent,
     ClientListsComponent,
     RawMaterialListComponent,
     EditMaterialListComponent,

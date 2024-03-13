@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Client } from 'src/app/Model/Client';
 import { ClientServiceService } from 'src/app/Service/client-service.service';
 
@@ -9,7 +10,7 @@ import { ClientServiceService } from 'src/app/Service/client-service.service';
   styleUrls: ['./client-lists.component.scss']
 })
 export class ClientListsComponent implements OnInit {
-  constructor(private client: ClientServiceService) { }
+  constructor(private client: ClientServiceService, private router: Router) { }
 
   clientList: Client[] = [];
   message: boolean = false;
@@ -25,7 +26,7 @@ export class ClientListsComponent implements OnInit {
     console.log(this.addClient.value);
     this.client.saveData(this.addClient.value).subscribe((result) => {
       console.log("Data Saved!");
-
+      this.router.navigate(["/client"])
     });
   }
   addClient: FormGroup = new FormGroup({

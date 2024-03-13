@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Employees } from 'src/app/Model/employees';
 import { EmployeeServiceService } from 'src/app/Service/employee-service.service';
 
@@ -10,7 +11,7 @@ import { EmployeeServiceService } from 'src/app/Service/employee-service.service
 })
 export class CreateComponent implements OnInit{
 
-  constructor(private employee: EmployeeServiceService){}
+  constructor(private employee: EmployeeServiceService, private router: Router){}
 
   EmployeeList: Employees[]=[];
   message: boolean=false;
@@ -26,7 +27,7 @@ onsubmit(){
   console.log(this.addEmployee.value);
   this.employee.saveData(this.addEmployee.value).subscribe((result)=>{
     console.log("Data Saved!");
-    
+    this.router.navigate(["/list"])
   });
   
 }

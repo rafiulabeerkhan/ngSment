@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Order } from 'src/app/Model/Order';
 import { Production } from 'src/app/Model/Production';
 import { OrderGoodsService } from 'src/app/Service/order-goods.service';
@@ -12,7 +13,7 @@ import { ProductionService } from 'src/app/Service/production.service';
 })
 export class ProductionComponent implements OnInit{
   constructor(private production: ProductionService,
-    private order: OrderGoodsService) { }
+    private order: OrderGoodsService, private router: Router) { }
   productionList: Production[] = [];
   OrderList: Order[] = [];
   message: boolean = false;
@@ -33,7 +34,7 @@ export class ProductionComponent implements OnInit{
     console.log(this.addProduction.value);
     this.production.saveProduction(this.addProduction.value).subscribe((result) => {
       console.log("Data Saved!");
-
+this.router.navigate(["/productionList"])
     });
     this.addProduction.value.orderEntity = {'id': this.addProduction.value.orderEntity}
   }

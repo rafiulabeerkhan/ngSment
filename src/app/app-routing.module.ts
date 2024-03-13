@@ -5,7 +5,6 @@ import { CreateComponent } from './CRUD/create/create.component';
 import { ListComponent } from './CRUD/list/list.component';
 import { EditComponent } from './CRUD/edit/edit.component';
 import { DashboardComponent } from './CRUD/dashboard/dashboard.component';
-import { ProductsComponent } from './ProductionCrud/products/products.component';
 import { ProductionComponent } from './ProductionCrud/production/production.component';
 import { AddBottlesComponent } from './Bottles/add-bottles/add-bottles.component';
 import { BottlesListComponent } from './Bottles/bottles-list/bottles-list.component';
@@ -29,7 +28,7 @@ import { OrderDetailsListComponent } from './OrderDetails/order-details-list/ord
 import { EditOrderDetailsComponent } from './OrderDetails/edit-order-details/edit-order-details.component';
 import { LoginComponent } from './Authentication/login/login.component';
 import { SignUpComponent } from './Authentication/sign-up/sign-up.component';
-import { ProductsListsComponent } from './ProductionCrud/products-lists/products-lists.component';
+
 import { ProductionListComponent } from './ProductionCrud/production-list/production-list.component';
 import { EditProductionListComponent } from './ProductionCrud/edit-production-list/edit-production-list.component';
 import { MachineListComponent } from './Sment/machine-list/machine-list.component';
@@ -43,7 +42,7 @@ const routes: Routes = [
    {path:"list", component: ListComponent},
    {path:"edit/:employeeID", component: EditComponent},
    {path:"dashboard", component: DashboardComponent},
-   {path:"product", component: ProductsComponent},
+  //  {path:"product", component: ProductsComponent},
    {path:"production", component: ProductionComponent},
    {path:"create", component: AddBottlesComponent},
    {path:"bottleList", component: BottlesListComponent},

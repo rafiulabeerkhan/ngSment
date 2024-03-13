@@ -107,16 +107,15 @@
         </div>
     </div>
     </div> -->
-<div class="container-fluid"> <br>
+<div class="container"> 
   <div class="text" style="color: #9f01ea; font-size:x-large;">
     Fill the fields to purchase the Raw Material
   </div>
   <br>
-  <form class="form-floating"  [formGroup]="addMaterial" (ngSubmit)="onsubmit()">
+  <form class="form" [formGroup]="addMaterial" (ngSubmit)="onsubmit()">
     <div class="form-row">
       <div class="input-data">
-        <span class="custom-dropdown big">
-          <b style="color: #3498db;">Material Name: </b>
+        <span class="custom-dropdown big">Material Name:
           <select formControlName="name">
             <option>HDPE</option>
             <option>LDPE</option>
@@ -128,10 +127,10 @@
           </select>
         </span>
       </div>
-      <br />
+      <br><br><br>
       <div class="input-data">
-        <span class="custom-dropdown big">
-          <b style="color: #3498db;">Coutry</b>
+        <span class="custom-dropdown big">Country
+
           <select formControlName="country">
             <option>USA</option>
             <option>Saudi Arabia</option>
@@ -142,37 +141,35 @@
           </select>
         </span>
       </div>
-      <br />
-    </div> <br>
+    </div> 
+    <br><br><br>
+    <div class="input-data">
+      <span class="custom-dropdown big">Bags
+        <select formControlName="quantity">
+          <option>50</option>
+          <option>100</option>
+          <option>150</option>
+          <option>200</option>
+          <option>250</option>
+          <option>500</option>
+          <option>1000</option>
+        </select>
+      </span>
+    </div>
+    <div class="form-row">
       <div class="input-data">
-        <span class="custom-dropdown big">
-          <b style="color: #3498db;">Quantity</b>
-          <select formControlName="quantity">
-            <option>50</option>
-            <option>100</option>
-            <option>150</option>
-            <option>200</option>
-            <option>250</option>
-            <option>500</option>
-            <option>1000</option>
-          </select>
-        </span>
+        <input type="number" required formControlName="payment">
+        <div class="underline"></div>
+        <label for="">Price</label>
       </div>
-      <br />
-      <div class="form-row container-sm">
-        <div class="input-data">
-          <input type="number" required formControlName="payment">
-          <div class="underline"></div>
-          <label for="">Price</label>
-        </div>
-        <br />
-      </div>
-      <br />
 
-      <div class="form-row submit-btn">
-        <div class="input-data">
-          <button style="float: inline-end;">Purchase</button>
-        </div>
+    </div>
+
+
+    <div class="form-row submit-btn">
+      <div class="input-data">
+        <button style="float: inline-end;">Purchase</button>
       </div>
+    </div>
   </form>
 </div>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Client } from 'src/app/Model/Client';
 import { ClientServiceService } from 'src/app/Service/client-service.service';
 
@@ -17,7 +18,7 @@ export class ClientsComponent implements OnInit{
       this.getAll();
     });
   }
-  constructor(private client: ClientServiceService) {}
+  constructor(private client: ClientServiceService){}
 
   clientData: any = [];
 

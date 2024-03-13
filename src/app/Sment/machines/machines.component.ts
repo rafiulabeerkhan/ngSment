@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Machine } from 'src/app/Model/Machine';
 import { MachineService } from 'src/app/Service/machine.service';
 
@@ -9,7 +10,7 @@ import { MachineService } from 'src/app/Service/machine.service';
   styleUrls: ['./machines.component.scss']
 })
 export class MachinesComponent implements OnInit {
-  constructor(private machine: MachineService) { }
+  constructor(private machine: MachineService, private router: Router) { }
   machineList: Machine[] = [];
   message: boolean = false;
 
@@ -25,7 +26,7 @@ export class MachinesComponent implements OnInit {
     console.log(this.addMachine.value);
     this.machine.saveMachine(this.addMachine.value).subscribe((result) => {
       console.log("Data Saved!");
-
+this.router.navigate(["/machineList"])
     });
   }
 
