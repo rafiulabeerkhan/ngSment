@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Material } from '../Model/Material';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +16,7 @@ export class RawMaterialService {
       'Content-Type': 'application/json'
     })
   }
-  getAll(){
+  getAll(): Observable<any>{
     return this.http.get(this.url+ "/getAll");
   }
 

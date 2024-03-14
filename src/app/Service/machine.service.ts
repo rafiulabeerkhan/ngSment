@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Machine } from '../Model/Machine';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +17,7 @@ export class MachineService {
     })
   }
 
-  getAll(){
+  getAll(): Observable<any>{
     return this.http.get(this.url+ "/getAll");
   }
 

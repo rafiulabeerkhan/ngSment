@@ -134,19 +134,35 @@
                 </div> -->
                 <br />
                 <div class="col">
-                    <label for="">Country Name</label>
-                    <div class="underline"></div>
-                    <input type="text" required class="form-control"   formControlName="country">
+                  <label for="">Country</label>
+                  <select
+                    class="form-select"
+                    aria-label="Default select example"
+                    formControlName="country"
+                  >
+                    <option>Saudi Arabia</option>
+                    <option>Japan</option>
+                    <option>China</option>
+                    <option>India</option>
+                    <option>Columbia</option>
+                    <option>United States</option>
+                  </select>
 
                 </div>
             </div>
             <div class="row">
                 <br />
                 <div class="col">
-                    <label for="">Status</label>
+                    <label for="">Condition</label>
                     <div class="underline"></div>
-                    <input type="text" required class="form-control"   formControlName="status">
-
+                    <select
+                    class="form-select"
+                    aria-label="Default select example"
+                    formControlName="status"
+                  >
+                    <option>Brand New</option>
+                    <option>Second Hand</option>
+                  </select>
                 </div>
                 <br />
                 <div class="col">
@@ -155,9 +171,17 @@
                     <div class="underline"></div>
                 </div>
                 <div class="col">
-                  <label for="">Employee ID</label>
-                    <input type="number" required class="form-control" formControlName="employee_id">
-                    <div class="underline"></div>
+                  <label for="">Assigned Employee</label>
+                  <select
+                  class="form-select"
+                  aria-label="Default select example"
+                  formControlName="Employees"
+                >
+                  <option selected>Machine Delegator</option>
+                  <option *ngFor="let a of employeeList" value="{{ a.employeeID }}">
+                    {{ a.firstName }}
+                  </option>
+                </select>
                 </div>
             </div>
             <!-- <div class="row">

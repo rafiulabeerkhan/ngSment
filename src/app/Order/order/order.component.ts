@@ -3,11 +3,13 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Client } from 'src/app/Model/Client';
+import { Material } from 'src/app/Model/Material';
 import { Order } from 'src/app/Model/Order';
 import { Products } from 'src/app/Model/Products';
 import { AddProductsService } from 'src/app/Service/add-products.service';
 import { ClientServiceService } from 'src/app/Service/client-service.service';
 import { OrderGoodsService } from 'src/app/Service/order-goods.service';
+import { RawMaterialService } from 'src/app/Service/raw-material.service';
 
 
 @Component({
@@ -22,10 +24,13 @@ export class OrderComponent implements OnInit {
   constructor(private order: OrderGoodsService,
     private productService: AddProductsService,
     private clientService: ClientServiceService,
+   
+
     private router: Router) { }
   OrderList: Order[] = [];
   productList: Products[] = [];
   clientList: any[] = [];
+ 
 
   message: boolean = false;
   ngOnInit(): void {
@@ -35,6 +40,7 @@ export class OrderComponent implements OnInit {
       this.clientService.getAll().subscribe(res => {
         this.clientList = res;
         console.log(this.clientList);
+
 
       })
 
@@ -49,7 +55,8 @@ export class OrderComponent implements OnInit {
     console.log('before ---------------------', this.addOrder.value);
 
     this.addOrder.value.productEntity = { 'product_id': this.addOrder.value.productEntity }
-    this.addOrder.value.clientEntity = { 'clientId': this.addOrder.value.clientEntity };
+    this.addOrder.value.clientEntity = { 'clientId': this.addOrder.value.clientEntity }
+   
 
     this.order.saveOrder(this.addOrder.value).subscribe((result) => {
       console.log("Data Saved!");
@@ -65,7 +72,8 @@ export class OrderComponent implements OnInit {
     due: new FormControl(''),
     client_id: new FormControl(''),
     productEntity: new FormControl(),
-    clientEntity: new FormControl()
+    clientEntity: new FormControl(),
+   
   });
 
 

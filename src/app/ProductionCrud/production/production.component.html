@@ -3,50 +3,89 @@
     <div class="text" style="color: #9f01ea;">
         
     </div> -->
-    <div class="container">
-
-        <br>
-        <form [formGroup]="addProduction" (ngSubmit)="onsubmit()">
-
-            <div class="row">
-                <div class="col">
-                  <label for="">Material ID</label>
-                    <select class="form-select" aria-label="Default select example"  formControlName="orderEntity">
-                        <option selected>Select Order ID</option>
-                        <option *ngFor="let a of OrderList" value="{{a.id}}">{{a.totalQuantity}}</option>
-                      </select>
-                </div>
-                <br />
-                <div class="col">
-                    <label for="">Material Name</label>
-                    <div class="underline"></div>
-                    <input type="number" required class="form-control"   formControlName="material_id">
-
-                </div>
-            </div>
-            <div class="row">
-                <br />
-                <div class="col">
+<div class="container">
+  <br />
+  <form [formGroup]="addProduction" (ngSubmit)="onsubmit()">
+    <div class="row">
+      <div class="col">
+        <label for="">Material Name</label>
+        <select
+          class="form-select"
+          aria-label="Default select example"
+          formControlName="orderEntity"
+        >
+          <option selected>Select Material</option>
+          <option *ngFor="let a of materialList" value="{{ a.material_id }}">
+            {{ a.name }}
+          </option>
+        </select>
+      </div>
+      <br />
+      <div class="col">
+        <label for="">First Hired Man</label>
+        <select
+          class="form-select"
+          aria-label="Default select example"
+          formControlName="Employees"
+        >
+          <option selected>Employee for Production</option>
+          <option *ngFor="let a of employeeList" value="{{ a.employeeID }}">
+            {{ a.firstName }}
+          </option>
+        </select>
+      </div>
+      <div class="col">
+        <label for="">Second Hired Man</label>
+        <select
+          class="form-select"
+          aria-label="Default select example"
+          formControlName="Employees"
+        >
+          <option selected>Employee for Production</option>
+          <option *ngFor="let a of employeeList" value="{{ a.employeeID }}">
+            {{ a.firstName }}
+          </option>
+        </select>
+      </div>
+    </div>
+    <div class="row">
+      <br />
+      <!-- <div class="col">
                     <label for="">Employee ID</label>
                     <div class="underline"></div>
                     <input type="number" required class="form-control"   formControlName="employee_id">
 
-                </div>
-                <br />
-                <div class="col">
-                    <label for="">Machine ID</label>
-                    <div class="underline"></div>
-                    <input type="number" required class="form-control"   formControlName="machine_id">
-
-                </div>
-                <br />
-                <div class="col">
-                  <label for="">Status</label>
-                    <input type="text" required class="form-control" formControlName="status">
-                    <div class="underline"></div>
-                </div>
-            </div>
-            <!-- <div class="row">
+                </div> -->
+      <br />
+      <div class="col">
+        <label>Engine</label>
+        <select
+          class="form-select"
+          aria-label="Default select example"
+          formControlName="machineEntity"
+        >
+          <option selected>Choose machine to produce goods</option>
+          <option *ngFor="let a of machineList" value="{{ a.machine_id }}">
+            {{ a.machine_id }}
+          </option>
+        </select>
+      </div>
+      <br />
+      <div class="col">
+        <label for="">Status</label>
+        <select
+          class="form-select"
+          aria-label="Default select example"
+          formControlName="status"
+        >
+          <option selected>Testing Products</option>
+          <option>Start Production</option>
+          <option>On Going</option>
+          <option>Finished</option>
+        </select>
+      </div>
+    </div>
+    <!-- <div class="row">
                 <br />
                 <div class="col">
                   <label for="">Client ID</label>
@@ -70,21 +109,21 @@
                 </div>
                 <br />
             </div> -->
-            <br />
-            <br />
+    <br />
+    <br />
 
-            <div class="form-row submit-btn">
-                <div class="input-data">
-                    <div class="inner"></div>
-                    <!-- <input type="submit" value="submit"> -->
-                    <button class="button"role="button" type="submit">Submit</button>
-                </div>
-            </div>
-            </form>
+    <div class="form-row submit-btn">
+      <div class="input-data">
+        <div class="inner"></div>
+        <!-- <input type="submit" value="submit"> -->
+        <button class="button" role="button" type="submit">Submit</button>
+      </div>
     </div>
-    <br><br>
-    <br>
-    <!-- <div class="container">
+  </form>
+</div>
+<br /><br />
+<br />
+<!-- <div class="container">
         <form class="row g-3">
             <div class="col-md-6">
               <label for="inputEmail4" class="form-label">Email</label>
@@ -132,5 +171,3 @@
 
     </div>
     -->
-
-
