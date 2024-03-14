@@ -35,4 +35,7 @@ export class OrderGoodsService {
   updateOrderData(id: number, data:number) {
     return this.http.put(`${this.url}/${id}`, data);
    }
+   countOrder(){
+    return this.http.get(this.url+"/count");
+   }
 }

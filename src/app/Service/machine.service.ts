@@ -38,4 +38,8 @@ export class MachineService {
     return this.http.put(`${this.url}/${id}`, data);
    }
 
+   countMachine(){
+    return this.http.get(this.url+"/count");
+   }
+
 }

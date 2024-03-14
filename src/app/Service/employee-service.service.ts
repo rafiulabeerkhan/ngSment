@@ -41,4 +41,7 @@ export class EmployeeServiceService {
     return this.http.put(`${this.url}/${id}`, data);
    }
 
+   countEmployees(){
+    return this.http.get(this.url+"/count");
+   }
 }

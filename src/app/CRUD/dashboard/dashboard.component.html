@@ -3,16 +3,16 @@
   <b style="color: #9a616d; font-family:monospace;">SMENT</b>
   </mat-toolbar>
   <br> <br>
-  <mat-grid-list cols="6" rowHeight="2:1">
+  <mat-grid-list cols="4" rowHeight="2:1">
     <mat-grid-tile>
       <i class="fa-solid fa-bottle-water"></i><br>
       <b>Orders: </b><br>
-      <p>1,58,000</p><br>
+      <p>{{orderCount}}</p><br>
     </mat-grid-tile>
     <mat-grid-tile>
       <i class="fa-solid fa-brain"></i><br>
       <b>Clients: </b>
-      <p>65</p><br>
+      <p>{{clientCount}}</p><br>
     </mat-grid-tile>
     <mat-grid-tile>
       <i class="fa-solid fa-bangladeshi-taka-sign"></i><br>
@@ -22,17 +22,17 @@
     <mat-grid-tile>
       <i class="fa-regular fa-hard-drive"></i><br>
       <b>Machines: </b>
-      <p>15</p><br>
+      <p>{{machineCount}}</p><br>
     </mat-grid-tile>
-    <mat-grid-tile>
+    <!-- <mat-grid-tile>
       <i class="fa-solid fa-user-slash"></i>
       <b> Employees on Leave: </b>
       <p>3</p><br>
-     </mat-grid-tile>
+     </mat-grid-tile> -->
     <mat-grid-tile>
       <i class="fa-solid fa-address-card" ></i>
       <b> Employees </b>
-      <p>39</p><br>
+      <p>{{employeeCount}}</p><br>
      </mat-grid-tile>
   </mat-grid-list>
   <br><br>
@@ -50,8 +50,8 @@
       </div>
       <div class="horizontal"></div>
       <div class="graph-1">Client</div>
-      <div class="graph-2">Revenue</div>
-      <div class="graph-3">Employees</div>
+      <div class="graph-2">Order</div>
+      <div class="graph-3">Employee</div>
       <div class="rocket">
         <div class="window">Delivery</div>
         <div class="stripe"></div>

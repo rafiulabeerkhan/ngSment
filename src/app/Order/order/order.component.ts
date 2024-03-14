@@ -47,17 +47,27 @@ export class OrderComponent implements OnInit {
     })
 
   }
+calculate(){
+  let quantity = this.addOrder.value.totalQuantity;
+  let pieces = this.addOrder.value.price;
+  this.addOrder.patchValue({totalPrice:quantity*pieces})
+  console.log(quantity*pieces);
+  
+  console.log("hi");
+  
+}
+
   removeMessage() {
     this.message = false;
   }
 
   onsubmit() {
-    console.log('before ---------------------', this.addOrder.value);
+    console.log('beforetrfjugvu ---------------------', this.addOrder.value);
 
     this.addOrder.value.productEntity = { 'product_id': this.addOrder.value.productEntity }
     this.addOrder.value.clientEntity = { 'clientId': this.addOrder.value.clientEntity }
    
-
+    console.log('before ---------------------', this.addOrder.value);
     this.order.saveOrder(this.addOrder.value).subscribe((result) => {
       console.log("Data Saved!");
       this.router.navigate(["/orderList"])
@@ -71,9 +81,8 @@ export class OrderComponent implements OnInit {
     totalPrice: new FormControl(''),
     due: new FormControl(''),
     client_id: new FormControl(''),
-    productEntity: new FormControl(),
-    clientEntity: new FormControl(),
-   
+    productEntity: new FormControl(''),
+    clientEntity: new FormControl(''),
   });
 
 

@@ -10,13 +10,13 @@
                     <label for="">Quantity in PCS</label>
                     <div class="underline"></div>
 
-                    <input type="number" required class="form-control"   formControlName="totalQuantity">
+                    <input type="number" required class="form-control"   formControlName="totalQuantity" >
                 </div>
                 <br />
                 <div class="col">
                     <label for="">Price in PCS</label>
                     <div class="underline"></div>
-                    <input type="number" required class="form-control"   formControlName="price">
+                    <input type="number" required class="form-control"   formControlName="price" (keyup)="calculate()">
 
                 </div>
             </div>
@@ -30,7 +30,7 @@
                 </div>
                 <br />
                 <div class="col">
-                  <label for="">due</label>
+                  <label for="">Advance Payment</label>
                     <input type="number" required class="form-control"   formControlName="due">
                     <div class="underline"></div>
                 </div>
@@ -63,8 +63,11 @@
 
             <div class="form-row submit-btn">
                 <div class="input-data">
-                    <div class="inner"></div>
-                    <input type="submit" value="submit">
+                  <button class="button" role="button"><span class="text">
+                    <i class="fa-solid fa-check"></i>
+                </span><span>Submit</span> 
+              </button>
+                    <!-- <input type="submit" value="submit"> -->
                 </div>
             </div>
             </form>

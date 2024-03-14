@@ -32,4 +32,8 @@ export class ClientServiceService {
   updateClientData(id: number, data:number) {
     return this.http.put(`${this.url}/${id}`, data);
    }
+
+   countClient(){
+    return this.http.get(this.url+"/count");
+   }
 }

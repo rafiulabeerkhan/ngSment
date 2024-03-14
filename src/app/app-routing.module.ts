@@ -37,6 +37,8 @@ import { EditBottleListComponent } from './Bottles/edit-bottle-list/edit-bottle-
 
 
 const routes: Routes = [
+
+   
    {path:"home", component:HomeComponent},
    {path:"employee", component:CreateComponent},
    {path:"list", component: ListComponent},
@@ -71,6 +73,7 @@ const routes: Routes = [
    {path:"productionList/:production_id", component: EditProductionListComponent},
    {path:"machineList", component: MachineListComponent},
    {path:"machineList/:machine_id", component: EditMachineListComponent},
+   {path:"", component:HomeComponent},
 ];
 
 @NgModule({
