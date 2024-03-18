@@ -15,30 +15,39 @@
                         <th scope="col">Price(Per Pieces)</th>
                         <th scope="col">Amount</th>
                         <th scope="col">Due Amount</th>
-                        <th scope="col">Client ID:</th>
+                        <!-- <th scope="col">Client ID:</th> -->
+                     
                         <th scope="col">Actions:</th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                     
 
                     </tr>
                 </thead>
 
                 <tbody>
                     <tr scope="row" *ngFor="let item of orderList">
-                        <td> {{item.id}}</td>
+                        <td> {{item.orderId}}</td>
                         <!-- <td>{{item.details_id}}</td> -->
                         <td>{{item.totalQuantity}}</td>
                         <td>{{item.price}}</td>
                         <td> <b>{{item.totalPrice}}</b></td>
                         <td> <b>{{item.due}}</b></td>
-                        <td> <b>{{item.client_id}}</b></td>
-                        <td> 
-                                <a class="btn btn-info" (click)="deleteById(item.id)">Delete</a>
+                        <!-- <td> <b>{{item.client_id}}</b></td> -->
                         
-                                <a class="btn btn-info"  [routerLink]="['/updateOrder', item.id]">Update</a>
-                           
+                        <td> 
+                                <!-- <button class="btn btn-info">Delete</button> -->
+                                <i class="fa-solid fa-delete-left" (click)="deleteById(item.orderId)"></i>
+                              
+                                <!-- <button class="btn btn-info" >Update</button> -->
+                        </td>
+                        <td>
+                            <i class="fa-solid fa-brush"  [routerLink]="['/updateOrder', item.orderId]"></i>
 
-                            <button style="background-color:beige; color: black;" role="button"
-                                    routerLink="/production">Send for Production</button>
-                            
+                        </td>
+                        <td>
+                            <button routerLink="/production">Send for Production</button>
+                    
                         </td>
 
 

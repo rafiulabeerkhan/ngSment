@@ -40,7 +40,7 @@ onsubmit(){
     address: new FormControl(''),
     nid: new FormControl(''),
     birthDate: new FormControl(''),
-    shift: new FormControl('night'),
+    shift: new FormControl(''),
     workingHour: new FormControl(''),
     joiningDate: new FormControl(''),
    

@@ -8,7 +8,7 @@ export class Employees{
         public  nid?: number,
         public  birthDate?: string,
         public shift?: string,
-                public workingHour?: number,
+        public workingHour?: number,
         public joiningDate?: string,
         ){}
    

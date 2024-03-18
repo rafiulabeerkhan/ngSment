@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { Client } from 'src/app/Model/Client';
+import { Material } from 'src/app/Model/Material';
 import { Order } from 'src/app/Model/Order';
+import { ClientServiceService } from 'src/app/Service/client-service.service';
 import { OrderGoodsService } from 'src/app/Service/order-goods.service';
+import { RawMaterialService } from 'src/app/Service/raw-material.service';
 
 @Component({
   selector: 'app-order-list',
@@ -8,9 +12,12 @@ import { OrderGoodsService } from 'src/app/Service/order-goods.service';
   styleUrls: ['./order-list.component.scss']
 })
 export class OrderListComponent implements OnInit{
-  constructor(private order: OrderGoodsService) {}
+  constructor(private order: OrderGoodsService,
+   ) {}
   OrderData: any = [];
   orderList: Order[] = [];
+ 
+ 
 
 
 
@@ -20,7 +27,10 @@ export class OrderListComponent implements OnInit{
       this.OrderData = allData;
       this.getAll();
     });
+
   }
+
+
   getAll() {
     this.order.getAll().subscribe({
       next: (res: any) => {
@@ -31,6 +41,7 @@ export class OrderListComponent implements OnInit{
       },
     });
   }
+
 
   deleteById(id?: number) {
     if(id == null) {

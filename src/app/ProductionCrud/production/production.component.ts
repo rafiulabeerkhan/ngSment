@@ -37,17 +37,18 @@ export class ProductionComponent implements OnInit {
     this.order.getAll().subscribe((res) => {
       this.OrderList = res;
       console.log(this.OrderList);
-      this.materialService.getAll().subscribe(res => {
-        this.materialList = res;
+    })
+    this.materialService.getAll().subscribe(res => {
+      this.materialList = res;
+    })
+    
+    this.employeeService.getAll().subscribe(res => {
+      this.employeeList = res;
 
-        this.employeeService.getAll().subscribe(res => {
-          this.employeeList = res;
-          this.machineService.getAll().subscribe(res => {
-            this.machineList = res;
-          })
-        })
-      })
-    });
+    })
+    this.machineService.getAll().subscribe(res => {
+      this.machineList = res;
+    })
   }
 
   removeMessage() {

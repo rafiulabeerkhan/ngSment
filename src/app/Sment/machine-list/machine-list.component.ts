@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Machine } from 'src/app/Model/Machine';
+import { Employees } from 'src/app/Model/employees';
+import { EmployeeServiceService } from 'src/app/Service/employee-service.service';
 import { MachineService } from 'src/app/Service/machine.service';
 
 @Component({
@@ -8,9 +10,11 @@ import { MachineService } from 'src/app/Service/machine.service';
   styleUrls: ['./machine-list.component.scss']
 })
 export class MachineListComponent  implements OnInit {
-  constructor(private machine: MachineService) { }
+  constructor(private machine: MachineService,
+    private employees: EmployeeServiceService) { }
   machineData: any = [];
   machineList: Machine[] = [];
+  EmployeeList: Employees[] = [];
 
   ngOnInit(): void {
     this.machine.getAll().subscribe((allData) => {
@@ -18,6 +22,13 @@ export class MachineListComponent  implements OnInit {
       this.machineData = allData;
       this.getAll();
     });
+
+    this.employees.getAll().subscribe((allData) =>{
+      console.log(allData);
+      this.machineData = allData;
+      this.getEmp();
+      
+    })
   }
 
   getAll() {
@@ -29,6 +40,18 @@ export class MachineListComponent  implements OnInit {
         console.log('Error' + res);
       },
     });
+
+
+  }
+  getEmp(){
+    this.employees.getAll().subscribe({
+      next: (res: any) => {
+        this.EmployeeList = res;
+      },
+      error: (res: any) => {
+        console.log('Error' + res);
+      },
+    })
   }
 
   deleteById(id?: number) {

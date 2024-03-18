@@ -16,24 +16,25 @@
                         <th scope="col">Country</th>
                         <th scope="col">Status</th>
                         <th scope="col">Production(Per Minute)</th>
-                        <th scope="col">Employee ID</th>
+                        <th scope="col">Employee Name</th>
+                        <th scope="col"></th>
+                        <th scope="col">Action</th>
                         </tr>
                 </thead>
                 <br>
               
                 <tbody>
-                    <tr scope="row"  *ngFor="let item of machineList" >
+                    <tr scope="row" *ngFor="let item of machineList" >
                         <td> {{item.machine_id}}</td>
                         <td>{{item.country}}</td>
                         <td>{{item.status}}</td>
                         <td>{{item.pmProduction}}</td>
-                        <td> <b>{{item.employee_id}}</b></td> <br>
+                        <td *ngFor=" let i of EmployeeList">{{i.firstName}}</td>
                         <td>
-                            <button  role="button" (click)="deleteById(item.machine_id)">Delete</button>
-                        </td>
-                        <td>
+                            <button  role="button" (click)="deleteById(item.machine_id)">Delete</button> &nbsp;
                             <button role="button"  [routerLink]="['/machineList', item.machine_id]">Edit</button>
                         </td>
+
                         
 
                     </tr>

@@ -5,7 +5,7 @@ export class Machine{
         public country?: string,
         public status?: string,
         public pmProduction?: number,
-        public employee_id?: string
+        public employeeId?: string
  
         ){}
    

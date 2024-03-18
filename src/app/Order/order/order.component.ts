@@ -37,12 +37,12 @@ export class OrderComponent implements OnInit {
     this.productService.getAll().subscribe(res => {
       this.productList = res;
       console.log(this.productList);
-      this.clientService.getAll().subscribe(res => {
-        this.clientList = res;
-        console.log(this.clientList);
+      // this.clientService.getAll().subscribe(res => {
+      //   this.clientList = res;
+      //   console.log(this.clientList);
 
 
-      })
+      // })
 
     })
 
@@ -62,12 +62,12 @@ calculate(){
   }
 
   onsubmit() {
-    console.log('beforetrfjugvu ---------------------', this.addOrder.value);
+    console.log('before ---------------------', this.addOrder.value);
 
     this.addOrder.value.productEntity = { 'product_id': this.addOrder.value.productEntity }
     this.addOrder.value.clientEntity = { 'clientId': this.addOrder.value.clientEntity }
    
-    console.log('before ---------------------', this.addOrder.value);
+    console.log('after ---------------------', this.addOrder.value);
     this.order.saveOrder(this.addOrder.value).subscribe((result) => {
       console.log("Data Saved!");
       this.router.navigate(["/orderList"])
@@ -75,7 +75,7 @@ calculate(){
   }
 
   addOrder: FormGroup = new FormGroup({
-    order_id: new FormControl(''),
+    orderId: new FormControl(''),
     totalQuantity: new FormControl(''),
     price: new FormControl(''),
     totalPrice: new FormControl(''),
