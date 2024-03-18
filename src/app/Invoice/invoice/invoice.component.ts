@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Invoice } from 'src/app/Model/Invoice';
 import { InvoiceService } from 'src/app/Service/invoice.service';
 
@@ -11,7 +12,8 @@ import { InvoiceService } from 'src/app/Service/invoice.service';
 export class InvoiceComponent implements OnInit {
 
 
-  constructor(private invoice: InvoiceService){}
+  constructor(private invoice: InvoiceService,
+    private router: Router){}
   InvoiceList: Invoice[]=[];
   message: boolean=false;
 
@@ -42,7 +44,10 @@ export class InvoiceComponent implements OnInit {
     this.invoice.saveInvoice(this.addInvoice.value).subscribe((result)=>{
       console.log("Data Saved!");
     });
+    this.router.navigate(["/invoiceList"])
     
   }
+
+ 
 
 }

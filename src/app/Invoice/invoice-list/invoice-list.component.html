@@ -1,52 +1,59 @@
 <div class="content">
-    <div class="container" > <br>
+    <div class="container"> <br>
         <h2 class="mb-5">Invoice Lists</h2>
         <div style="float: inline-end">
             <button class="button" routerLink="/invoice">Add Invoice</button>
         </div>
-       
-        <div class="table-responsive" >
+
+        <div class="table-responsive">
             <!-- <button style="float: inline-end;" routerLink="/addClient">Add your Order</button> -->
             <table class="table custom-table">
                 <thead>
                     <tr>
                         <th scope="col">ID</th>
                         <th scope="col">Status</th>
-                        <th scope="col">Name of Receiver</th>
+                        <th scope="col">Receiver</th>
                         <th scope="col">Address</th>
-                        <th scope="col">Item</th> 
-                        <th scope="col">Quantity</th> 
-                        <th scope="col">Price</th> 
-                        <th scope="col">Discount</th> 
-                        <th scope="col">Grand Total</th> 
-                        <th scope="col">DATE</th> 
-                        <th scope="col">Production ID</th> 
-                        <th scope="col"></th> 
-                        </tr>
+                        <th scope="col">Item</th>
+                        <th scope="col">Quantity</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Discount</th>
+                        <th scope="col">Grand Total</th>
+                        <th scope="col">DATE</th>
+                        <th scope="col">Production ID</th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+
+                    </tr>
                 </thead>
                 <br>
-              
+
                 <tbody>
-                    <tr scope="row"  *ngFor="let item of invoiceList" >
+                    <tr scope="row" *ngFor="let item of invoiceList">
                         <td> {{item.id}}</td>
                         <td>{{item.status}}</td>
                         <td>{{item.receiverName}}</td>
                         <td>{{item.receiverAddress}}</td>
-                        <td> <b>{{item.receiverItem}}</b></td>
-                        <td> <b>{{item.quantity}}</b></td>
-                        <td> <b>{{item.price}}</b></td>
-                        <td> <b>{{item.discount}}</b></td>
-                        <td> <b>{{item.grandTotal}}</b></td>
-                        <td> <b>{{item.dateTime|date:'shortDate'}}</b></td>
-                        <td> <b>{{item.production_id}}</b></td>
+                        <td>{{item.receiverItem}}</td>
+                        <td> {{item.quantity}}</td>
+                        <td> {{item.price}}</td>
+                        <td> {{item.discount}}</td>
+                        <td> {{item.grandTotal}}</td>
+                        <td> {{item.dateTime|date:'shortDate'}}</td>
+                        <td> {{item.production_id}}</td>
+
                         <td>
                             <button role="button" (click)="deleteById(item.id)">Delete</button>
                         </td>
                         <td>
                             <button role="button" [routerLink]="['/updateList', item.id]">Edit</button>
-                        </td>
-                        
 
+                        </td>
+                        <td>
+                            <button class="button" (click)="print(item.id ?? -1)"> Print </button>
+                        </td>
                     </tr>
                 </tbody>
             </table>

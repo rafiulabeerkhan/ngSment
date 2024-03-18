@@ -8,11 +8,16 @@
                 <thead>
                     <tr>
                         <th scope="col">Production ID</th>
-                        <th scope="col">Order ID</th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                        <!-- <th scope="col">Order ID</th>
                         <th scope="col">Material</th>
                         <th scope="col">First Man</th>
                         <th scope="col">Second Man</th>
-                        <th scope="col">Machine ID</th>
+                        <th scope="col">Machine ID</th> -->
                         <th scope="col">Status</th>
                         </tr>
                 </thead>
@@ -22,9 +27,11 @@
                     <tr scope="row" *ngFor="let item of productionList">
                         <td> {{item.production_id}}</td>
                         <td> {{item.order_id}}</td>
-                        <td *ngFor="let i of materialList"> {{i.name}}</td>
-                        <td *ngFor="let e of employeeList"> {{e.firstName}}</td>
-                        <!-- <td> {{item.secondEmployee}}</td> -->
+                        <!-- <td *ngFor="let i of materialList"> {{item.materialName}}</td>   <!-- <td *ngFor="let i of materialList"> {{item.materialName}}</td> -->
+                        <td> {{item.materialName}}</td>
+                        <!-- <td *ngFor="let e of employeeList"> {{e.firstName}}</td> -->
+                        <td> {{item.employeeName}}</td>
+                        <td> {{item.secondEmployee}}</td>
                         <td>{{item.machine_id}}</td>
                         <td> <b>{{item.status}}</b></td> <br>
                         <td>
@@ -33,8 +40,6 @@
                         <td>
                             <button  role="button"  [routerLink]="['/productionList', item.production_id]">Edit</button>
                         </td>
-                        
-
                     </tr>
                 </tbody>
             </table>

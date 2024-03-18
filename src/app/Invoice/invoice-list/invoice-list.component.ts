@@ -46,4 +46,12 @@ export class InvoiceListComponent implements OnInit {
     });
   }
 
+  print(id: number){
+    if(id == -1){
+      return;
+    }
+    let url = `http://localhost:8088/invoice/pdf/${id}`;
+    window.open(url, "_blank")
+  }
+
 }

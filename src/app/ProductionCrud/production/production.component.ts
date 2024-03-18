@@ -61,7 +61,7 @@ export class ProductionComponent implements OnInit {
       .saveProduction(this.addProduction.value)
       .subscribe((result) => {
         console.log('Data Saved!');
-        this.router.navigate(['/productionList']);
+        this.router.navigate(['/invoiceList']);
       });
     this.addProduction.value.orderEntity = {
       id: this.addProduction.value.orderEntity,

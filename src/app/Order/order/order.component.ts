@@ -37,12 +37,12 @@ export class OrderComponent implements OnInit {
     this.productService.getAll().subscribe(res => {
       this.productList = res;
       console.log(this.productList);
-      // this.clientService.getAll().subscribe(res => {
-      //   this.clientList = res;
-      //   console.log(this.clientList);
+      this.clientService.getAll().subscribe(res => {
+        this.clientList = res;
+        console.log(this.clientList);
 
 
-      // })
+      })
 
     })
 
@@ -80,7 +80,6 @@ calculate(){
     price: new FormControl(''),
     totalPrice: new FormControl(''),
     due: new FormControl(''),
-    client_id: new FormControl(''),
     productEntity: new FormControl(''),
     clientEntity: new FormControl(''),
   });
